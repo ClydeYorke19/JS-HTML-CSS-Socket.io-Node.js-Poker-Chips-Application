@@ -1,0 +1,19 @@
+{
+	"C": {
+		"username": "C",
+		"password": "1",
+		"loggedIn": true,
+		"idHolder": "Ve7FPMsg1Eka131BAAAU",
+		"inGame": false,
+		"currentRoom": "",
+		"additionalInfo": [],
+		"friendsList": [],
+		"friendCount": 0,
+		"currentAlerts": 0,
+		"typeAlerts": {},
+		"groups": {},
+		"aT": {
+			"token": "KgbhdOe7gyHWvZKAjgdVTajikKIGtVo"
+		}
+	}
+}
