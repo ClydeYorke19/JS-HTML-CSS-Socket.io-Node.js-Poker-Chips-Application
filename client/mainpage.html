@@ -1,0 +1,5434 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta charset="UTF-8">
+</head>
+
+<body>
+
+    <!-- NOT BOUNDED BUTTON ELEMENTS -->
+    <button id="viewUserInfoPageButton">View</button>
+    <button id="homeButton">Home</button>
+
+    <!-- IN GAME PLAYER BOARDER ELEMENTS -->
+    <h1 id="inGameBorderP1" class="inGameEl"></h1>
+    <h1 id="inGameBorderP2" class="inGameEl"></h1>
+    <h1 id="inGameBorderP3" class="inGameEl"></h1>
+    <h1 id="inGameBorderP4" class="inGameEl"></h1>
+    <h1 id="inGameBorderP5" class="inGameEl"></h1>
+    <h1 id="inGameBorderP6" class="inGameEl"></h1>
+    <h1 id="inGameBorderP7" class="inGameEl"></h1>
+    <h1 id="inGameBorderP8" class="inGameEl"></h1>
+    <h1 id="inGameBorderP9" class="inGameEl"></h1>
+
+    <!-- IN GAME ELEMENTS -->
+    <h1 id="inGameRoundDisplay" class="inGameEl"></h1>
+    <h1 id="inGamePotDisplay" class="inGameEl"></h1>
+    <div id="pokerTable" class="inGameEl"></div>
+    <button id="startGameButton" class="inGameEl">Start</button>
+    <button id="inGameMenuButton" class="inGameEl">II</button>
+
+    <label id="displayActionP1" class="inGameEl"></label>
+    <label id="displayActionP2" class="inGameEl"></label>
+    <label id="displayActionP3" class="inGameEl"></label>
+    <label id="displayActionP4" class="inGameEl"></label>
+    <label id="displayActionP5" class="inGameEl"></label>
+    <label id="displayActionP6" class="inGameEl"></label>
+    <label id="displayActionP7" class="inGameEl"></label>
+    <label id="displayActionP8" class="inGameEl"></label>
+    <label id="displayActionP9" class="inGameEl"></label>
+
+    <div id="inGameMenu">
+        <h1 id="inGameMenuHeader">Game Code: </h1>
+        <div id="menuBarrierAboveHeader"></div>
+        <div id="menuBarrierUnderHeader"></div>
+        <div id="menuBarrierUnderSections"></div>
+        <button id="xOutOfInGameMenu">X</button>
+        <div id="pTotalBuyInDiv">
+            <label id="pTotalBuyInSection">Total Buy Ins:</label>
+            <h4 id="p1TotalyBuytInLabel">Player 1: </h4>
+            <h4 id="p2TotalyBuytInLabel">Player 2: </h4>
+            <h4 id="p3TotalyBuytInLabel">Player 3: </h4>
+            <h4 id="p4TotalyBuytInLabel">Player 4: </h4>
+            <h4 id="p5TotalyBuytInLabel">Player 5: </h4>
+            <h4 id="p6TotalyBuytInLabel">Player 6: </h4>
+            <h4 id="p7TotalyBuytInLabel">Player 7: </h4>
+            <h4 id="p8TotalyBuytInLabel">Player 8: </h4>
+            <h4 id="p9TotalyBuytInLabel">Player 9: </h4>
+        </div>
+        <div id="gameInfoDiv">
+            <label id="gameInfoSection">Game Info:</label>
+            <h5 id="gIroomSize">Room Size: </h5>
+            <h5 id="gIBigBlind">Big Blind: </h5>
+            <h5 id="gISmallBlind">Small Blind: </h5>
+            <h5 id="gICurrentRound">Current Round: </h5>
+            <h5 id="gICurrentTurn">Current Turn: </h5>
+            <h5 id="gICurrentPot">Current Pot: </h5>
+            <button id="changingRoomSizeMidGameButton">CHANGE</button>
+        </div>
+        <br>
+    </div>
+
+    <!-- GENERAL APP ELEMENTS -->
+
+    <div id="homePageDisplay">
+        <h1 id="headerAppName">Pocket Chips</h1>
+        <br>
+        <br>
+        <button id="createGameButton">Create Game</button>
+        <br>
+        <br>
+        <button id="joinGameButton">Join Game</button>
+    </div>
+
+    <div id="setGameSizePage">
+        <article id="roomSizeSettings">
+            <div id="rSBarrierTop"></div>
+            <div id="barrier1"></div>
+            <label id="roomSizeSelectLabel">Table Type <br> (Max Players)</label>
+            <form name="roomSizeRadioSelect" id="roomSizeRadioSelect">
+                <input type="radio" value="2" id="twoPGame" name="roomSizeRadioSelect">
+                <label for="twoPGame">2</label>
+                <input type="radio" value="3" id="threePGame" name="roomSizeRadioSelect">
+                <label for="threePGame">3</label>
+                <input type="radio" value="4" id="fourPGame" name="roomSizeRadioSelect">
+                <label for="fourPGame">4</label>
+                <input type="radio" value="5" id="fivePGame" name="roomSizeRadioSelect">
+                <label for="fivePGame">5</label>
+                <br>
+                <input type="radio" value="6" id="sixPGame" name="roomSizeRadioSelect">
+                <label for="sixPGame">6</label>
+                <input type="radio" value="7" id="sevenPGame" name="roomSizeRadioSelect">
+                <label for="sevenPGame">7</label>
+                <input type="radio" value="8" id="eightPGame" name="roomSizeRadioSelect">
+                <label for="eightPGame">8</label>
+                <input type="radio" value="9" id="ninePGame" name="roomSizeRadioSelect">
+                <label for="ninePGame">9</label>
+            </form>
+            <div id="barrier2"></div>
+            <br>
+            <br>
+            <button id="roomSizeSubmitButton">Enter</button>
+            <div id="rSBarrierBottom"></div>
+            <label></label>
+        </article>
+    </div>
+
+    <div id="hostInGameDisplayInfoPage">
+        <div id="inGameNameDisplayInputShadow"></div>
+        <div id="inGameChipsDisplayInputShadow"></div>
+        <div id="infoBarrierTop"></div>
+        <h1 id="userDisplayNameLabel">Enter Display Name</h1>
+        <br>
+        <input type="text" id="inGameNameDisplayInput" name="inGameNameDisplayInput" placeholder="ENTER HERE">
+        <br>
+        <div id="infoBarrier1"></div>
+        <h1 id="userDisplayChipsLabel">Enter Buy In</h1>
+        <br>
+        <input tpye="number" id="inGameChipsDisplayInput" name="inGameChipsDisplayInput" placeholder="ENTER HERE">
+        <br>
+        <div id="infoBarrier2"></div>
+        <button id="hostSubmitsInGameInfoButton">ENTER</button>
+        <div id="infoBarrierBottom"></div>
+    </div>
+
+    <div id="userJoiningInGameDisplayInfoPage">
+        <div id="inGameNameDisplayInputShadow2"></div>
+        <div id="inGameChipsDisplayInputShadow2"></div>
+        <div id="uJInfoBarrierTop"></div>
+        <h1 id="userJoiningDisplayNameLabel">Enter Display Name</h1>
+        <br>
+        <input type="text" id="userJoiningInGameNameDisplayInput" name="userJoiningInGameNameDisplayInput" placeholder="ENTER HERE">
+        <br>
+        <div id="uJInfoMiddleBarrier1"></div>
+        <h1 id="userJoiningDisplayChipsLabel">Enter Buy In</h1>
+        <br>
+        <input tpye="number" id="userJoiningInGameChipsDisplayInput" name="userJoiningInGameChipsDisplayInput" placeholder="ENTER HERE">
+        <br>
+        <div id="uJInfoMiddleBarrier2"></div>
+        <button id="userJoiningSubmitsInGameInfoButton">ENTER</button>
+        <div id="uJInfoBarrierBottom"></div>
+    </div>
+
+    <div id="enterGameCodePage">
+        <div id="gameCodePageInputBoxShadow"></div>
+        <h1 id="enterGameCodeLabel">Enter The Game Code Here</h1>
+        <br>
+        <div id="ifPIJBarrier1"></div>
+        <input type="text" placeholder="Enter Here" name="enteredGameCode" id="enteredGameCode">
+        <br>
+        <div id="ifPIJBarrier2"></div>
+        <button id="userSubmitsGameCodeButton">Join</button>
+    </div>
+
+    <div id="preLobbyGameSettingsPopUpPage">
+        <div id="bigBlindInputBoxShadow"></div>
+        <div id="anteInputBoxShadow"></div>
+        <article id="hostChoosingBBArticle">
+            <label id="chooseTheBBLabel">Choose The Big Blind</label>
+            <br>
+            <select name="bigBlindOptionSelect" id="bigBlindOptionSelect">
+                <option selected disabled id="bBPH">choose the big blind</option>
+                <option value="1" id="bB1">1</option>
+                <option value="2" id="bB2">2</option>
+                <option value="3" id="bB3">3</option>
+            </select>
+            <br>
+            <br>
+            <label id="chooseTheAnteLabel">Choose The Ante</label>
+            <br>
+            <input type="number" step="any" name="chooseAnteInput" id="chooseAnteInput" placeholder="choose ante">
+            <br>
+            <br>
+            <button id="hostSetsPreGameSettingsAndStartsGameButton">Start</button>
+        </article>
+    </div>
+
+    <div id="hostChoosesWinnerOfRoundPage">
+        <label id="choosesWinnerOfRoundLabel">Choose The Winner! <br> (be honest)</label>
+        <br>
+        <br>
+        <br>
+        <select name="optionsForWinnerOfRound" id="optionsForWinnerOfRound">
+            <option value="player1" id="winnerOptionP1">Player 1</option>
+            <option value="player2" id="winnerOptionP2">Player 2</option>
+            <option value="player3" id="winnerOptionP3">Player 3</option>
+        </select>
+        <br>
+        <br>
+        <br>
+        <button id="hostSubmitsWinnerOfRoundButton">Enter</button>
+
+    </div>
+
+    <div id="startNextRoundAfterChoosingWinnerPage">
+        <label id="startNextRoundLabel">Start The Next Round?</label>
+        <br>
+        <br>
+        <button id="startNextRoundButton">Start</button>
+    </div>
+
+    <div id="recievingInvalidCredentialsForInGameDisplaysPage">
+        <label id="recievingInvalidCredentialsForInGameDisplaysLabel">Please enter a valid display name and chip buy-in.</label>
+    </div>
+
+    <!-- IN GAME PLAYER BUTTONS & FORMS -->
+    <div id="p1Buttons" class="inGameEl">
+        <button id="p1BetButton">BET</button>
+        <button id="p1CheckButton">CHECK</button>
+        <button id="p1CallButton">CALL</button>
+        <button id="p1FoldButton">FOLD</button>
+    </div>
+    <article id="p1BetForm" class="inGameEl">
+        <input required name="p1BetAmount" id="p1BetAmount" type="number" placeholder="Bet Amount">
+        <br>
+        <button id="p1BetSubmit">Enter</button>
+    </article>
+    <article id="p1RaiseForm" class="inGameEl">
+        <input name="p1RaiseAmount" id="p1RaiseAmount" type="number" placeholder="Raise Amount">
+        <br>
+        <button id="p1RaiseSubmit">Enter</button>
+    </article>
+
+    <div id="p2Buttons" class="inGameEl">
+        <button id="p2BetButton">BET</button>
+        <button id="p2CheckButton">CHECK</button>
+        <button id="p2CallButton">CALL</button>
+        <button id="p2FoldButton">FOLD</button>
+    </div>
+    <article id="p2BetForm" class="inGameEl">
+        <input name="p2BetAmount" id="p2BetAmount" type="number" placeholder="Bet Amount">
+        <br>
+        <button id="p2BetSubmit">Enter</button>
+    </article>
+    <article id="p2RaiseForm" class="inGameEl">
+        <input name="p2RaiseAmount" id="p2RaiseAmount" type="number" placeholder="Raise Amount">
+        <br>
+        <button id="p2RaiseSubmit">Enter</button>
+    </article>
+
+    <div id="p3Buttons" class="inGameEl">
+        <button id="p3BetButton">BET</button>
+        <button id="p3CheckButton">CHECK</button>
+        <button id="p3CallButton">CALL</button>
+        <button id="p3FoldButton">FOLD</button>
+    </div>
+    <article id="p3BetForm" class="inGameEl">
+        <input name="p3BetAmount" id="p3BetAmount" type="number" placeholder="Bet Amount">
+        <br>
+        <button id="p3BetSubmit">Enter</button>
+    </article>
+    <article id="p3RaiseForm" class="inGameEl">
+        <input name="p3RaiseAmount" id="p3RaiseAmount" type="number" placeholder="Raise Amount">
+        <br>
+        <button id="p3RaiseSubmit">Enter</button>
+    </article>
+
+    <div id="p4Buttons" class="inGameEl">
+        <button id="p4BetButton">BET</button>
+        <button id="p4CheckButton">CHECK</button>
+        <button id="p4CallButton">CALL</button>
+        <button id="p4FoldButton">FOLD</button>
+    </div>
+    <article id="p4BetForm" class="inGameEl">
+        <input name="p4BetAmount" id="p4BetAmount" type="number" placeholder="Bet Amount">
+        <br>
+        <button id="p4BetSubmit">Enter</button>
+    </article>
+    <article id="p4RaiseForm" class="inGameEl">
+        <input name="p4RaiseAmount" id="p4RaiseAmount" type="number" placeholder="Raise Amount">
+        <br>
+        <button id="p4RaiseSubmit">Enter</button>
+    </article>
+
+    <div id="p5Buttons" class="inGameEl">
+        <button id="p5BetButton">BET</button>
+        <button id="p5CheckButton">CHECK</button>
+        <button id="p5CallButton">CALL</button>
+        <button id="p5FoldButton">FOLD</button>
+    </div>
+    <article id="p5BetForm" class="inGameEl">
+        <input name="p5BetAmount" id="p5BetAmount" type="number" placeholder="Bet Amount">
+        <br>
+        <button id="p5BetSubmit">Enter</button>
+    </article>
+    <article id="p5RaiseForm" class="inGameEl">
+        <input name="p5RaiseAmount" id="p5RaiseAmount" type="number" placeholder="Raise Amount">
+        <br>
+        <button id="p5RaiseSubmit">Enter</button>
+    </article>
+
+    <div id="p6Buttons" class="inGameEl">
+        <button id="p6BetButton">BET</button>
+        <button id="p6CheckButton">CHECK</button>
+        <button id="p6CallButton">CALL</button>
+        <button id="p6FoldButton">FOLD</button>
+    </div>
+    <article id="p6BetForm" class="inGameEl">
+        <input name="p6BetAmount" id="p6BetAmount" type="number" placeholder="Bet Amount">
+        <br>
+        <button id="p6BetSubmit">Enter</button>
+    </article>
+    <article id="p6RaiseForm" class="inGameEl">
+        <input name="p6RaiseAmount" id="p6RaiseAmount" type="number" placeholder="Raise Amount">
+        <br>
+        <button id="p6RaiseSubmit">Enter</button>
+    </article>
+
+    <div id="p7Buttons" class="inGameEl">
+        <button id="p7BetButton" class="inGameEl">BET</button>
+        <button id="p7CheckButton" class="inGameEl">CHECK</button>
+        <button id="p7CallButton" class="inGameEl">CALL</button>
+        <button id="p7FoldButton" class="inGameEl">FOLD</button>
+    </div>
+    <article id="p7BetForm" class="inGameEl">
+        <input name="p7BetAmount" id="p7BetAmount" type="number" placeholder="Bet Amount">
+        <br>
+        <button id="p7BetSubmit">Enter</button>
+    </article>
+    <article id="p7RaiseForm" class="inGameEl">
+        <input name="p7RaiseAmount" id="p7RaiseAmount" type="number" placeholder="Raise Amount">
+        <br>
+        <button id="p7RaiseSubmit">Enter</button>
+    </article>
+
+    <div id="p8Buttons" class="inGameEl">
+        <button id="p8BetButton">BET</button>
+        <button id="p8CheckButton">CHECK</button>
+        <button id="p8CallButton">CALL</button>
+        <button id="p8FoldButton">FOLD</button>
+    </div>
+    <article id="p8BetForm" class="inGameEl">
+        <input name="p8BetAmount" id="p8BetAmount" type="number" placeholder="Bet Amount">
+        <br>
+        <button id="p8BetSubmit">Enter</button>
+    </article>
+    <article id="p8RaiseForm" class="inGameEl">
+        <input name="p8RaiseAmount" id="p8RaiseAmount" type="number" placeholder="Raise Amount">
+        <br>
+        <button id="p8RaiseSubmit">Enter</button>
+    </article>
+
+    <div id="p9Buttons" class="inGameEl">
+        <button id="p9BetButton">BET</button>
+        <button id="p9CheckButton">CHECK</button>
+        <button id="p9CallButton">CALL</button>
+        <button id="p9FoldButton">FOLD</button>
+    </div>
+    <article id="p9BetForm" class="inGameEl">
+        <input name="p9BetAmount" id="p9BetAmount" type="number" placeholder="Bet Amount">
+        <br>
+        <button id="p9BetSubmit">Enter</button>
+    </article>
+    <article id="p9RaiseForm" class="inGameEl">
+        <input name="p9RaiseAmount" id="p9RaiseAmount" type="number" placeholder="Raise Amount">
+        <br>
+        <button id="p9RaiseSubmit">Enter</button>
+    </article>
+    
+    <!-- LOG IN + CREATE ACCOUNT ELEMENTS -->
+    <div id="userInfoPage">
+        <div id="newAlertPresentDisplay"></div>
+        <button id="viewAlertsButton">Alerts</button>
+        <button id="xOutOfUserInfoPageButton">X</button>
+        <br>
+        <br>
+        <label id="userLoggedInIndentifier">You are not logged in!</label>
+        <br>
+        <br>
+        <button id="logInButton">Log-In</button>
+        <button id="createAccountButton">Create Account</button>
+        <button id="viewProfileInfoButton">Profile Info</button>
+        <br>
+        <button id="viewFriendsButton">Friends</button>
+        <button id="viewGroupsButton">Groups</button>
+        <br>
+        <br>
+        <button id="signOutButton">Sign Out</button>
+    </div>
+
+    <div id="logOutConfirmationPage">
+        <label id="logOutConfirmationLabel">Are you sure you want to logout?</label>
+        <br>
+        <button id="yesLogOutConfirmationButton">Yes</button>
+        <button id="noLogOutConfirmationButton">No</button>
+        <br>
+    </div>
+
+    <div id="userLogInPage">
+        <div id="enteredUserNameBoxShadow"></div>
+        <div id="enteredPasswordBoxShadow"></div>
+        <label id="logInUserName" for="theEnteredUsername">Username</label>
+        <br>
+        <input required type="text" name="theEnteredUsername" id="theEnteredUsername" placeholder="enter username">
+        <br>
+        <label id="logInPassword">Password</label>
+        <br>
+        <input required type="password" name="theEnteredPassword" id="theEnteredPassword" placeholder="enter password">
+        <br>
+        <button id="userSubmitsLogInInfoButton">ENTER</button>
+        <br>
+        <button id="createAccountButtonFromLoginPage">Create Account</button>
+        <button id="xOutOfLogInPage">X</button>
+    </div>
+
+    <div id="userCreateAccountPage">
+        <div id="requestedUserNameBoxShadow"></div>
+        <div id="requestedPasswordBoxShadow"></div>
+        <label id="chooseUserNameLabel">Username</label>
+        <br>
+        <input type="text" name="theRequestedUserName" id="theRequestedUserName" placeholder="enter username"/>
+        <br>
+        <label id="choosePasswordLabel">Password</label>
+        <br>
+        <input type="text" name="theRequestedPassword" id="theRequestedPassword" placeholder="enter password"/>
+        <br>
+        <button id="userSubmitsCreatingOfAccountButton">ENTER</button>
+        <button id="xOutOfCreatingAccountPage">X</button>
+    </div>
+
+    <div id="recievingFailureToLoginPage">
+        <label id="recievingFailureToLoginLabel">Either the username or the password was incorrect. Please try again.</label>
+    </div>
+
+    <div id="recievingInvalidCredentialsForAccountPage">
+        <label id="recievingInvalidCredentialsForAccountLabel">You tried to create an account with invalid credentials. Please try again.</label>
+    </div>
+
+    <!-- FRIENDS PAGE ELEMENTS -->
+    <div id="friendsPage">
+        <label id="friendsPageLabel">Friends</label>
+        <button id="xOutOfFriendsPage">X</button>
+        <button id="addMoreFriendsButton">Add Friend</button>
+        <ul id="friendsList" style="list-style-type: none;">
+            <br>
+        </ul>
+    </div>
+
+    <div id="addingFriendsPage">
+        <button id="xOutOfAddingFriendPage">X</button>
+        <label id="addingFriendsPageLabel">Enter the desired username</label>
+        <br>
+        <br>
+        <input type="text" name="addingFriendsInput" id="addingFriendsInput" placeholder="ENTER">
+        <br>
+        <br>
+        <button id="sendingFriendRequestButton">Send Request</button>
+        <br>
+    </div>
+
+    <!-- ALERTS PAGE ELEMENTS -->
+    <div id="alertsPage">
+        <button id="xOutOfAlertsPageBttn">X</button>
+        <label id="alertsPageLabel">Alerts</label>
+        <li id="alertsPageList" style="list-style-type: none;">
+            <label id="noPendingAlertsMessage">No Alerts</label>
+        </li>
+    </div>
+
+    <!-- GROUPS PAGE ELEMENTS -->
+
+    <div id="groupsPage">
+        <button id="xOutOfGroupsPage">X</button>
+        <label id="groupsPageLabel">Groups</label>
+        <br>
+        <button id="createNewGroupButton">Create Group</button>
+        <br>
+        <br>
+        <br>
+        <ul id="groupsList">
+
+        </ul>
+    </div>
+
+    <div id="creatingNewGroupPage">
+        <div id="groupNameInputBoxShadow"></div>
+        <div id="groupAnteInputBoxShadow"></div>
+        <button id="xOutOfCreatingNewGroup">X</button>
+        <label id="creatingNewGroupInfoLabel">Group Info</label>
+        <br>
+        <br>
+        <label id="newGroupNameLabel">Group Name</label>
+        <br>
+        <br>
+        <input type="text" name="newGroupNameInput" id="newGroupNameInput" placeholder="enter here">
+        <br>
+        <br>
+        <br>
+        <form name="newGroupRoomSizeInput" id="newGroupRoomSizeInput">
+            <br>
+            <label id="newGroupRoomSizeLabel">Set the room size</label>
+            <br>
+            <input type="radio" value="2" id="group2PGame" name="groupRoomSize">
+            <label for="twoPGame">2</label>
+            <input type="radio" value="3" id="group3PGame" name="groupRoomSize">
+            <label for="threePGame">3</label>
+            <input type="radio" value="4" id="group4PGame" name="groupRoomSize">
+            <label for="fourPGame">4</label>
+            <input type="radio" value="5" id="group5PGame" name="groupRoomSize">
+            <label for="fivePGame">5</label>
+            <br>
+            <input type="radio" value="6" id="group6PGame" name="groupRoomSize">
+            <label for="sixPGame">6</label>
+            <input type="radio" value="7" id="group7PGame" name="groupRoomSize">
+            <label for="sevenPGame">7</label>
+            <input type="radio" value="8" id="group8PGame" name="groupRoomSize">
+            <label for="eightPGame">8</label>
+            <input type="radio" value="9" id="group9PGame" name="groupRoomSize">
+            <label for="ninePGame">9</label>
+            <br>
+            <br>
+        </form>
+        <br>
+        <label id="newGroupAnteLabel">Set the ante </label>
+        <br>
+        <br>
+        <input type="number" step="any" name="newGroupAnteInput" id="newGroupAnteInput" placeholder="enter here">
+        <br>
+        <br>
+        <br>
+        <button id="userSubmitsNewlyCreatedGroup">Submit</button>
+    </div>
+
+    <div id="viewingTheChosenGroupPage">
+        <div id="vtcgRoomSizeInputBoxShadow"></div>
+        <div id="vtcgAnteInputBoxShadow"></div>
+        <button id="xOutOfvtcg">X</button>
+        <label id="vtcgLabel">Jericho1</label>
+        <br>
+        <button id="vtcgEditGroupInfoBttn">Edit</button>
+        <br>
+        <br>
+        <br>
+        <br>
+        <label id="vtcgRSLabel">Room Size: </label>
+        <br>
+        <input type="text" id="vtcgRSInput" readonly="readonly" placeholder="enter">
+        <br>
+        <br>
+        <label id="vtcgAnteLabel">Ante:</label>
+        <br>
+        <input type="text" id="vtcgAnteInput" readonly="readonly" placeholder="enter">
+        <button id="vtcgSaveGroupInfoBttn">Save</button>
+        <br>
+        <br>
+        <label id="vtcgMembersLabel">Members: </label>
+        <button id="vtcgInvFriends2GroupButton">Invite Members</button>
+        <br>
+        <br>
+        <ul id="vtcgMembersList">
+
+        </ul>
+        <br>
+        <button id="vtcgStartGameButton">Start Game</button>
+        <button id="vtcgDeleteGroupButton">Delete Group</button>
+    </div>
+
+    <div id="invitingMembersToGroupPage">
+        <div id="userToInvite2GroupInputBoxShadow"></div>
+        <label id="invitingUserToGroupLabel">Enter the desired username</label>
+        <br>
+        <input type="text" name="userToInviteToGroupInput" id="userToInviteToGroupInput" placeholder="enter here">
+        <br>
+        <br>
+        <br>
+        <button id="invitingUserToGroupSubmit">Invite</button>
+        <br>
+        <br>
+        <button id="xOutOfInvUser2Group">X</button>
+        <button id="viewFriends2Inv2Group">View Friends</button>
+    </div>
+
+    <!-- INVITING PLAYERS TO GAME ELEMENTS -->
+    <div id="invitingUserToGamePage">
+        <label id="invitingUserToGameLabel" for="userBeingInvitedToGame">Who are you inviting?</label>
+        <br>
+        <input type="text" name="userBeingInvitedToGame" id="userBeingInvitedToGame" placeholder="enter here">
+        <br>
+        <button id="xOutOfInvitingUserToGamePage">X</button>
+        <button id="userSubmitsInviteButton">INVITE</button>
+    </div>
+
+    <div id="playerReBuyingPage">
+        <button id="xOutOfReBuyPage">X</button>
+        <h1 id="playerReBuyLabel">How much are you re-buying?</h1>
+        <input type="number" id="playerReBuyChipsInput" name="playerReBuyChipsInput" placeholder="enter re buy here">
+        <br>
+        <br>
+        <button tpye="submit" id="playerReBuySubmit" value="ENTER">ENTER</button>
+        <br>
+    </div>
+
+    <div id="hostHasDisbanedGamePage">
+        <label id="hostHasDisbanedGameLabel">The host has disbanded the game</label>
+        <br>
+        <br>
+        <button id="okHostHasDisbandedGameButton">OK</button>
+    </div>
+
+    <!-- CONFIRMATION TO RETURN HOME ELEMENTS -->
+
+    <div id="confirmationToLeaveGameManuallyPage">
+        <label id="leaveGameConfirmationLabel">Are you sure you want to return home? <br> (you will leave the game)</label>
+        <br>
+        <br>
+        <button id="userConfirmsLeaveGame">YES</button>
+        <button id="userDeclinesLeaveGame">NO</button>
+    </div>
+
+    <div id="confirmationToGoHomeWhileCreatingGamePage">
+        <label id="disbandGameConfirmationLabel">Are you sure you want to return home? <br> (you will disband the game)</label>
+        <br>
+        <br>
+        <button id="userConfirmsDisbandGame">YES</button>
+        <button id="userDeclinesDisbandGame">NO</button>
+    </div>
+
+    <!-- PROFILE INFO PAGE ELEMENTS -->
+    <div id="profileInfoPage">
+        <button id="xOutOfProfileInfoPage">X</button>
+        <br>
+        <label id="profileInfoPageLabel">Profile Info</label>
+        <div id="profileInfoPageBarrier1"></div>
+        <br>
+        <br>
+        <label id="additionalUserRealName">Enter Your Real Name</label>
+        <br>
+        <input type="text" name="editableRealName" id="editableRealName" readonly="readonly" placeholder="enter here">
+        <button id="editRealNameButton">EDIT</button>
+        <div id="profileInfoPageBarrier2"></div>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <label id="additionalUserPreSetChips">Enter PreSet Chips</label>
+        <br>
+        <input type="number" name="editablePreSetChipAmount" id="editablePreSetChipAmount" readonly="readonly" placeholder="enter here">
+        <button id="editPreSetChipsButton">EDIT</button>
+        <div id="profileInfoPageBarrier3"></div>
+        <br>
+        <button id="customizeChipsButton">CUSTOMIZE CHIP CASE</button>
+        <button id="deleteAccountButton">DELETE ACCOUNT</button>
+        <button id="saveInputtedUserInfoButton">SAVE</button>
+    </div>
+
+    <div id="customizeChipsCasePage">
+        <button id="xOutOfCustomizeChipsPageButton">X</button>
+        <label id="customizeChipsCasePageLabel" for="fileInput">Select A Photo For Your Chips!</label>
+        <br>
+        <input id="fileInput" type="file" accept="image/*;capture=camera" />
+        <br>
+        <br>
+        <div id="chipPreview">
+            <img id="chipPreviewImage" src="">
+        </div>
+        <br>
+        <button id="saveChipCustomizationButton">Save</button>
+    </div>
+
+    <div id="confirmationToDeleteAccountPage">
+        <label id="deleteAccountConfirmationLabel">Are you sure you want to delete you account? <br> (your account will no longer exist)</label>
+        <br>
+        <br>
+        <button id="userConfirmsDeleteAccount">YES</button>
+        <button id="userDeclinesDeleteAccount">NO</button>
+    </div>
+
+    <!-- TESTING NEW FOLD ELEMENTS -->
+    <div id="divForCardImgP1" class="inGameEl"><img src="/pokerCard.png" width="35px" height="50px"></div>
+    <div id="divForPlacementCardImgP1" class="inGameEl"><img src="/pokerCard.png" width="20px" height="30px"></div>
+
+    <!-- <div id="divForCardImgP2" class="inGameEl"><img src="/pokerCard.png" width="35px" height="50px"></div> -->
+    <div id="divForPlacementCardImgP2" class="inGameEl"><img src="/pokerCard.png" width="20px" height="30px"></div>
+
+    <!-- <div id="divForCardImgP3" class="inGameEl"><img src="/pokerCard.png" width="35px" height="50px"></div> -->
+    <div id="divForPlacementCardImgP3" class="inGameEl"><img src="/pokerCard.png" width="20px" height="30px"></div>
+
+    <!-- <div id="divForCardImgP4" class="inGameEl"><img src="/pokerCard.png" width="35px" height="50px"></div> -->
+    <div id="divForPlacementCardImgP4" class="inGameEl"><img src="/pokerCard.png" width="20px" height="30px"></div>
+
+    <!-- <div id="divForCardImgP5" class="inGameEl"><img src="/pokerCard.png" width="35px" height="50px"></div> -->
+    <div id="divForPlacementCardImgP5" class="inGameEl"><img src="/pokerCard.png" width="20px" height="30px"></div>
+
+    <!-- <div id="divForCardImgP6" class="inGameEl"><img src="/pokerCard.png" width="35px" height="50px"></div> -->
+    <div id="divForPlacementCardImgP6" class="inGameEl"><img src="/pokerCard.png" width="20px" height="30px"></div>
+
+    <!-- P1 CASE OF CHIPS ELEMENTS -->
+    <div id="chipCaseBorderP1" style="display: none; border: 3px solid blue; border-radius: 5px; position: absolute; width: 205px; height: 40px; top: 610px; left: 95px; background: white; box-shadow: -1px 1px 0px 0px, -2px 2px 0px 0px, -3px 3px 0px 0px, -4px 4px 0px 0px blue;"></div>
+    <button id="xOutOfChipsCaseP1">X</button>
+    
+    <div id="lowestChipP1" class="p1ChipCase" value="1" style="display: none; font-size: 4vw; border: 2px dashed white; position: absolute; top: 615px; left: 100px; background: red; text-align: center; color: black; border-radius: 50%; height: 30px; width: 30px;">1</div>
+    <div id="secondLowestChipP1" class="p1ChipCase" value="2" style="display: none; font-size: 4vw; border: 2px dashed white; position: absolute; top: 615px; left: 155px; background: green; text-align: center; color: black; border-radius: 50%; height: 30px; width: 30px;">2</div>
+    <div id="secondHighestChipP1" class="p1ChipCase" value="3" style="display: none; font-size: 4vw; border: 2px dashed white; position: absolute; top: 615px; left: 210px; background: orangered; text-align: center; color: black; border-radius: 50%; height: 30px; width: 30px;">5</div>
+    <div id="highestChipP1" class="p1ChipCase" value="4" style="display: none; font-size: 4vw; border: 2px dashed white; position: absolute; top: 615px; left: 265px; background: purple; text-align: center; color: black; border-radius: 50%; height: 30px; width: 30px;">10</div>
+
+    <!-- Changing Game Size Mid Game Elements -->
+    <div id="confirmationChangeRoomSizePage">
+        <label id="confirmationChangeRoomSizeLabel">Are you sure you want to change the game size?</label>
+        <br>
+        <br>
+        <button id="confirmRoomSizeChange">YES</button>
+        <button id="declineRoomSizeChange">NO</button>
+    </div>
+
+    <div id="waitForRoundToEnd2ChangeRoomSizePage">
+        <label id="waitForRoundToEnd2ChangeRoomSizeLabel">Wait for the current round to end to change room sizes</label>
+        <br>
+        <br>
+        <button id="okWaitForRoundToEnd2ChangeRoomSize">OK</button>
+    </div>
+
+    <div id="midGameRoomSizeChangePage">
+        <label id="midGameRoomSizeChangeLabel">Choose The New Game Size</label>
+        <form name="midGameRoomSizeSelect" id="midGameRoomSizeSelect">
+            <input type="radio" value="2" id="mGTwoPGame" name="midGameRoomSizeRadioSelect">
+            <label for="mGTwoPGame">2</label>
+            <input type="radio" value="3" id="mGThreePGame" name="midGameRoomSizeRadioSelect">
+            <label for="mGThreePGame">3</label>
+            <input type="radio" value="4" id="mGFourPGame" name="midGameRoomSizeRadioSelect">
+            <label for="mGFourPGame">4</label>
+            <input type="radio" value="5" id="mGFivePGame" name="midGameRoomSizeRadioSelect">
+            <label for="mGFivePGame">5</label>
+            <br>
+            <input type="radio" value="6" id="mGSixPGame" name="midGameRoomSizeRadioSelect">
+            <label for="mGSixPGame">6</label>
+            <input type="radio" value="7" id="mGSevenPGame" name="midGameRoomSizeRadioSelect">
+            <label for="mGSevenPGame">7</label>
+            <input type="radio" value="8" id="mGEightPGame" name="midGameRoomSizeRadioSelect">
+            <label for="mGEightPGame">8</label>
+            <input type="radio" value="9" id="mGNinePGame" name="midGameRoomSizeRadioSelect">
+            <label for="mGNinePGame">9</label>
+        </form>
+        <button id="midGameRoomSizeChangeSubmit">Enter</button>
+        <button id="cancelMidGameRoomSize">X</button>
+    </div>
+
+    <!-- Confirmation Elements -->
+    <div id="confirmationReconnectionPage">
+        <label id="confirmationReconnectionLabel">You were idle and have been temporarily disconnected <br> Do you wish to reconnect to previous game state?</label>
+        <br>
+        <br>
+        <button id="userConfirmsReconnectionMessage">YES</button>
+        <button id="userDeclinesReconnectionMessage">NO</button>
+    </div>
+
+    <div id="confirmingUserSetUnacceptableRoomSizePage">
+        <label id="confirmingUserSetUnacceptableRoomSizeLabel">You set an invalid room size! <br> Please choose the room size again</label>
+    </div>
+
+
+</body>
+
+<style>
+
+@media only screen and (max-width: 414px) and (min-width: 320px) {
+
+    body {
+        background-color: lightgray;
+        overflow: hidden;
+    }
+
+    button:focus {
+        background-color: red;
+    }
+
+    /* Hompage Displays */
+    #homePageDisplay {
+        display: block;
+        text-align: center;
+        align-items: center;
+    }
+
+    #headerAppName {
+        position: absolute;
+        display: block;
+        font-size: 23.725vw;
+        text-align: center;
+        font-variant: small-caps;
+        font-family: 'georgia', Arial, Helvetica, sans-serif;
+        left: 0vw;
+        /* width: 90vw; */
+        top: 15.361vw;
+        border-radius: 5px;
+        background-color: #fff;
+        border: 3px solid blue;
+        border-radius: 3px;
+        z-index: -1;
+        text-shadow:
+            -.5px .5px blue,
+            -1px .5px black,
+            -1.5px 1px blue,
+            -2px 1px black,
+            -2.5px 1.5px blue,
+            -3px 1.5px black,
+            -3.5px 2px black,
+            -4px 2px black;
+        box-shadow: -1px 1px 0px 0px, -2px 2px 0px 0px, -3px 3px 0px 0px, -4px 4px 0px 0px, -5px 5px 0px 0px blue;
+    }
+
+    #createGameButton {
+        position: absolute;
+        display: block;
+        text-align: center;
+        width: 60vw;
+        height: 20vw;
+        font-size: 8vw;
+        font-variant: small-caps;
+        background-color: white;
+        top: 100vw;
+        left: 20vw;
+        color: black;
+        border: 3px solid blue;
+        border-radius: 5px;
+        background-color: #fff;
+        font-family: optima;
+        text-shadow:
+            -.5px .5px blue,
+            -1px .5px black,
+            -1.5px 1px blue,
+            -2px 1px black;
+        box-shadow: -1px 1px 0px 0px, -2px 2px 0px 0px, -3px 3px 0px 0px, -4px 4px 0px 0px, -5px 5px 0px 0px blue;
+           
+    }
+
+    #joinGameButton {
+        position: absolute;
+        display: block;
+        width: 50vw;
+        height: 20vw; 
+        font-size: 7.5vw;
+        font-variant: small-caps;
+        background-color: white;
+        top: 75%;
+        color: black;
+        left: 25vw;
+        margin: auto;
+        border: 3px solid blue;
+        border-radius: 5px;
+        font-family: optima;
+        text-shadow:
+            -.5px .5px blue,
+            -1px .5px black,
+            -1.5px 1px blue,
+            -2px 1px black;
+        box-shadow: -1px 1px 0px 0px, -2px 2px 0px 0px, -3px 3px 0px 0px, -4px 4px 0px 0px, -5px 5px 0px 0px blue;
+
+    }
+
+    #viewUserInfoPageButton {
+        display: block;
+        position: absolute;
+        border: 3px solid blue;
+        font-size: 6vw;
+        color: black;
+        left: 70vw;
+        top: 3vw;
+        color: black;
+        background: white;
+        border-radius: 5px;
+        font-family: optima;
+        font-variant: small-caps;
+        text-shadow:
+            -.5px .5px blue,
+            -1px .5px black,
+            -1.5px 1px blue;
+            
+        box-shadow: -1px 1px 0px 0px, -2px 2px 0px 0px, -3px 3px 0px 0px, -4px 4px 0px 0px blue;
+    }
+
+    #homeButton {
+        display: block;
+        position: absolute;
+        border: 3px solid blue;
+        border-radius: 5px;
+        font-size: 5.8vw;
+        top: 3.5vw;
+        left: 35vw;
+        background: white;
+        color: black;
+        font-family: optima;
+        font-variant: small-caps;
+        font-weight: 500;
+        text-shadow:
+            -.5px .5px blue,
+            -1px .5px black,
+            -1.5px 1px blue;
+            
+        box-shadow: -1px 1px 0px 0px, -2px 2px 0px 0px, -3px 3px 0px 0px, -4px 4px 0px 0px blue;
+    }
+
+    /* Setting Room Size Displays */
+    #setGameSizePage {
+        display: none;
+    }
+
+    #roomSizeSelectLabel {
+        position: absolute;
+        text-align: center;
+        font-size: 14vw;
+        font-weight: 700;
+        width: 98.5%;
+        left: 0vw;
+        top: 23vw;
+        font-family: 'georgia', Arial, Helvetica, sans-serif;
+        font-variant: small-caps;
+        font-weight: 500;
+        background-color: #fff;
+        border: 3px solid blue;
+        border-radius: 5px;
+        text-shadow:
+            -.5px .5px blue,
+            -1px .5px black,
+            -1.5px 1px blue,
+            -2px 1px black,
+            -2.5px 1.5px black,
+            -3px 1.5px black,
+            -3.5px 2px black;
+        box-shadow: -1px 1px 0px 0px, -2px 2px 0px 0px, -3px 3px 0px 0px, -4px 4px 0px 0px, -5px 5px 0px 0px blue;
+    }
+
+    #roomSizeRadioSelect  {
+        position: absolute;
+        width: 98.5%;
+        top: 78vw;
+        font-size: 6vw;
+        text-align: left;
+        color: black;
+        left: 0vw;
+        font-family: optima;
+        border: 3px solid blue;
+        background-color: #fff;
+        box-shadow: -1px 1px 0px 0px, -2px 2px 0px 0px, -3px 3px 0px 0px, -4px 4px 0px 0px, -5px 5px 0px 0px blue;
+        
+    }
+
+    #roomSizeRadioSelect input[type=radio] {
+        top: 60vw;
+        left: -30vw;
+        border: 2px solid black;
+        margin: 25px;
+        font-family: optima;
+    }
+
+    #roomSizeSubmitButton {
+        position: absolute;
+        width: 35vw;
+        height: 13vw;
+        text-align: center;
+        font-size: 6vw;
+        border: 3px solid blue;
+        font-weight: 500;
+        border-radius: 5px;
+        top: 135vw;
+        color: black;
+        left: 32.416vw;
+        font-family: 'georgia', Arial, Helvetica, sans-serif;
+        font-variant: small-caps;
+        background: white;
+        text-shadow:
+            -.5px .5px blue,
+            -1px .5px black,
+            -1.5px 1px blue;
+        box-shadow: -1px 1px 0px 0px, -2px 2px 0px 0px, -3px 3px 0px 0px, -4px 4px 0px 0px, -5px 5px 0px 0px blue;
+    }
+
+    #confirmingUserSetUnacceptableRoomSizePage {
+        display: none;
+        border: 3px solid red;
+        border-radius: 5px;
+        position: absolute;
+        width: 300px;
+        height: 100px;
+        position: absolute;
+        top: 40vw;
+        left: 12vw;
+        background: white;
+        text-align: center;
+        box-shadow: -1px 1px 0px 0px, -2px 2px 0px 0px, -3px 3px 0px 0px, -4px 4px 0px 0px blue;
+    }
+
+    #confirmingUserSetUnacceptableRoomSizeLabel {
+        font-size: 5.5vw;
+        font-family: optima;
+        position: absolute;
+        left: 0vw;
+        top: 5vw;
+        width: 300px;
+        font-variant: small-caps;
+        text-shadow:
+            -.5px .5px blue,
+            -1px .5px black,
+            -1.5px 1px blue;
+    }
+
+    /* Host In Game Info Displays */
+    #hostInGameDisplayInfoPage {
+        display: none;
+    }
+
+    #userDisplayNameLabel {
+        position: absolute;
+        text-align: center;
+        width: 98.5%;
+        font-size: 13vw;
+        border: 3px solid blue;
+        border-radius: 5px;
+        top: 17vw;
+        left: 0vw;
+        font-size: 12vw;
+        font-weight: 500;
+        font-family: 'georgia', Arial, Helvetica, sans-serif;
+        background-color: #fff;
+        font-variant: small-caps;
+        text-shadow:
+            -.5px .5px blue,
+            -1px .5px black,
+            -1.5px 1px blue,
+            -2px 1px black,
+            -2.5px 1.5px black,
+            -3px 1.5px black,
+            -3.5px 2px black;
+        box-shadow: -1px 1px 0px 0px, -2px 2px 0px 0px, -3px 3px 0px 0px, -4px 4px 0px 0px, -5px 5px 0px 0px blue;
+    }
+
+    #inGameNameDisplayInput {
+        position: absolute;
+        width: 55vw;
+        border: 3px solid blue;
+        /* border: none; */
+        background: #fff;
+        border-radius: 5px;
+        outline: none;
+        text-align: center;
+        font-size: 1.5em;
+        height: 10vw;
+        top: 65vw;
+        left: 20vw;
+        font-weight: 500;
+        font-family: optima;
+    }
+
+    #inGameNameDisplayInputShadow {
+        position: absolute;
+        width: 61.5vw;
+        border: 3px solid black;
+        /* border: none; */
+        background: #fff;
+        border-radius: 5px;
+        outline: none;
+        text-align: center;
+        height: 13vw;
+        top: 65vw;
+        left: 20vw;
+        box-shadow: -1px 1px 0px 0px, -2px 2px 0px 0px, -3px 3px 0px 0px, -4px 4px 0px 0px, -5px 5px 0px 0px blue;
+    }
+
+    #userDisplayChipsLabel {
+        position: absolute;
+        text-align: center;
+        width: 98.5%;
+        font-size: 13vw;
+        border: 3px solid blue;
+        background-color: #fff;
+        border-radius: 5px;
+        top: 80vw;
+        left: 0vw;
+        font-family: 'georgia', Arial, Helvetica, sans-serif;
+        font-variant: small-caps;
+        font-size: 12vw;
+        font-weight: 500;
+        text-shadow:
+            -.5px .5px blue,
+            -1px .5px black,
+            -1.5px 1px blue,
+            -2px 1px black,
+            -2.5px 1.5px black,
+            -3px 1.5px black,
+            -3.5px 2px black;
+        box-shadow: -1px 1px 0px 0px, -2px 2px 0px 0px, -3px 3px 0px 0px, -4px 4px 0px 0px, -5px 5px 0px 0px blue;
+    }
+
+    #inGameChipsDisplayInput {
+        position: absolute;
+        width: 55vw;
+        border: 3px solid blue;
+        background: white;
+        border-radius: 5px;
+        text-align: center;
+        font-size: 1.5em;
+        height: 10vw;
+        top: 115vw;
+        left: 20vw;
+        font-family: optima;
+        font-weight: 500;
+    }
+
+    #inGameChipsDisplayInputShadow {
+        position: absolute;
+        width: 61.5vw;
+        border: 3px solid black;
+        background: white;
+        border-radius: 5px;
+        text-align: center;
+        height: 13vw;
+        top: 115vw;
+        left: 20vw;
+        box-shadow: -1px 1px 0px 0px, -2px 2px 0px 0px, -3px 3px 0px 0px, -4px 4px 0px 0px, -5px 5px 0px 0px blue;
+    }
+
+    #hostSubmitsInGameInfoButton {
+        position: absolute;
+        width: 35vw;
+        height: 13vw;
+        text-align: center;
+        font-size: 6vw;
+        border: 3px solid blue;
+        font-weight: 500;
+        border-radius: 5px;
+        top: 143vw;
+        color: black;
+        left: 34vw;
+        font-family: 'georgia', Arial, Helvetica, sans-serif;
+        font-variant: small-caps;
+        background: white;
+        text-shadow:
+            -.5px .5px blue,
+            -1px .5px black,
+            -1.5px 1px blue;
+        box-shadow: -1px 1px 0px 0px, -2px 2px 0px 0px, -3px 3px 0px 0px, -4px 4px 0px 0px, -5px 5px 0px 0px blue;
+    }
+
+    #recievingInvalidCredentialsForInGameDisplaysPage {
+        display: none;
+        position: absolute;
+        border: 3px solid red;
+        border-radius: 5px;
+        left: 15vw;
+        top: 15vw;
+        width: 300px;
+        height: 60px;
+        text-align: center;
+        background: white;
+        box-shadow: -1px 1px 0px 0px, -2px 2px 0px 0px, -3px 3px 0px 0px, -4px 4px 0px 0px red;
+    }
+
+    #recievingInvalidCredentialsForInGameDisplaysLabel {
+        text-align: center;
+        font-size: 5vw;
+        font-family: optima;
+        font-variant: small-caps;
+        width: 300px;
+        text-shadow:
+            -.5px .5px blue,
+            -1px .5px black,
+            -1.5px 1px blue;
+    }
+
+    /* Player Joining In Game Info Displays */
+    #userJoiningInGameDisplayInfoPage {
+        display: none;
+    }
+
+    #userJoiningDisplayNameLabel {
+        position: absolute;
+        text-align: center;
+        width: 98.5%;
+        font-size: 13vw;
+        border: 3px solid blue;
+        border-radius: 5px;
+        top: 17vw;
+        left: 0vw;
+        font-size: 12vw;
+        font-weight: 500;
+        font-family: 'georgia', Arial, Helvetica, sans-serif;
+        background-color: #fff;
+        font-variant: small-caps;
+        text-shadow:
+            -.5px .5px blue,
+            -1px .5px black,
+            -1.5px 1px blue,
+            -2px 1px black,
+            -2.5px 1.5px black,
+            -3px 1.5px black,
+            -3.5px 2px black;
+        box-shadow: -1px 1px 0px 0px, -2px 2px 0px 0px, -3px 3px 0px 0px, -4px 4px 0px 0px, -5px 5px 0px 0px blue;
+    }
+
+    #userJoiningInGameNameDisplayInput {
+        position: absolute;
+        width: 55vw;
+        border: 3px solid blue;
+        /* border: none; */
+        background: #fff;
+        border-radius: 5px;
+        outline: none;
+        text-align: center;
+        font-size: 1.5em;
+        height: 10vw;
+        top: 65vw;
+        left: 20vw;
+        font-weight: 500;
+        font-family: optima;
+    }
+
+    #inGameNameDisplayInputShadow2 {
+        position: absolute;
+        width: 61.5vw;
+        border: 3px solid black;
+        /* border: none; */
+        background: #fff;
+        border-radius: 5px;
+        outline: none;
+        text-align: center;
+        height: 13vw;
+        top: 65vw;
+        left: 20vw;
+        box-shadow: -1px 1px 0px 0px, -2px 2px 0px 0px, -3px 3px 0px 0px, -4px 4px 0px 0px, -5px 5px 0px 0px blue;
+    }
+
+    #userJoiningDisplayChipsLabel {
+        position: absolute;
+        text-align: center;
+        width: 98.5%;
+        font-size: 13vw;
+        border: 3px solid blue;
+        background-color: #fff;
+        border-radius: 5px;
+        top: 80vw;
+        left: 0vw;
+        font-family: 'georgia', Arial, Helvetica, sans-serif;
+        font-variant: small-caps;
+        font-size: 12vw;
+        font-weight: 500;
+        text-shadow:
+            -.5px .5px blue,
+            -1px .5px black,
+            -1.5px 1px blue,
+            -2px 1px black,
+            -2.5px 1.5px black,
+            -3px 1.5px black,
+            -3.5px 2px black;
+        box-shadow: -1px 1px 0px 0px, -2px 2px 0px 0px, -3px 3px 0px 0px, -4px 4px 0px 0px, -5px 5px 0px 0px blue;
+    }
+
+    #userJoiningInGameChipsDisplayInput {
+        position: absolute;
+        width: 55vw;
+        border: 3px solid blue;
+        background: white;
+        border-radius: 5px;
+        text-align: center;
+        font-size: 1.5em;
+        height: 10vw;
+        top: 115vw;
+        left: 20vw;
+        font-family: optima;
+        font-weight: 500;
+    }
+
+    #inGameChipsDisplayInputShadow2 {
+        position: absolute;
+        width: 61.5vw;
+        border: 3px solid black;
+        background: white;
+        border-radius: 5px;
+        text-align: center;
+        height: 13vw;
+        top: 115vw;
+        left: 20vw;
+        box-shadow: -1px 1px 0px 0px, -2px 2px 0px 0px, -3px 3px 0px 0px, -4px 4px 0px 0px, -5px 5px 0px 0px blue;
+    }
+
+    #userJoiningSubmitsInGameInfoButton {
+        position: absolute;
+        width: 35vw;
+        height: 13vw;
+        text-align: center;
+        font-size: 6vw;
+        border: 3px solid blue;
+        font-weight: 500;
+        border-radius: 5px;
+        top: 143vw;
+        color: black;
+        left: 34vw;
+        font-family: 'georgia', Arial, Helvetica, sans-serif;
+        font-variant: small-caps;
+        background: white;
+        text-shadow:
+            -.5px .5px blue,
+            -1px .5px black,
+            -1.5px 1px blue;
+        box-shadow: -1px 1px 0px 0px, -2px 2px 0px 0px, -3px 3px 0px 0px, -4px 4px 0px 0px, -5px 5px 0px 0px blue;
+    }
+
+    /* In Game Player Border Displays */
+    #inGameBorderP1, #inGameBorderP2, #inGameBorderP3, #inGameBorderP4, #inGameBorderP5, #inGameBorderP6, #inGameBorderP7, #inGameBorderP8, #inGameBorderP9 {
+        display: none;
+        position: absolute;
+        font-size: 1.4em;
+        font-family: optima;
+        font-weight: 600;
+        text-align: center;
+        word-spacing: 100px;
+        width: 100px;
+        border: 4px solid black;
+        border-radius: 4px;
+        background: white;
+        color: black;
+        max-height: 14.359vw;
+    }
+
+    /* In Game Element Displays */
+    #pokerTable {
+        display: none;
+        position: absolute;
+        border: 5px solid black;
+        width: 180px;
+        height: 420px;
+        top: 38vw;
+        left: 26vw;
+        border-radius: 50%;
+        background: white;
+        z-index: -1;
+    }
+
+    #inGamePotDisplay {
+        display: none;
+        position: absolute;
+        top: 80vw;
+        left: 45vw;
+        font-family: optima;
+        font-variant: small-caps;
+        font-size: 1em;
+        color: black;
+    }
+
+    #startGameButton {
+        display: none;
+        position: absolute;
+        text-align: center;
+        height: 8vw;
+        font-size: 5.5vw;
+        border: 3px solid blue;
+        border-radius: 5px;
+        color: black;
+        top: 90vw;
+        left: 37.2vw;
+        font-family: otpima;
+        font-variant: small-caps;
+        background: white;
+        text-shadow:
+            -.5px .5px blue,
+            -1px .5px black,
+            -1.5px 1px blue;
+            
+        box-shadow: -1px 1px 0px 0px, -2px 2px 0px 0px, -3px 3px 0px 0px, -4px 4px 0px 0px blue;
+    }
+
+    #inGameRoundDisplay {
+        display: none;
+        position: absolute;
+        top: 90vw;
+        left: 42vw;
+        font-family: optima;
+        font-variant: small-caps;
+        font-size: 1.2em;
+        color: black;
+    }
+
+    /* In Game Menu Page Displays */
+    #inGameMenu {
+        display: none;
+        position: absolute;
+        left: -1vw;
+        border: 3px solid blue;
+        border-radius: 5px;
+        background: white;
+        height: 500px;
+        width: 391px;
+        position: absolute;
+        box-shadow: -1px 1px 0px 0px, -2px 2px 0px 0px, -3px 3px 0px 0px, -4px 4px 0px 0px, -5px 5px 0px 0px blue;
+        z-index: 10;
+    }
+
+    #inGameMenuHeader {
+        position: absolute;
+        text-align: center;
+        left: 0vw;
+        top: 5.5vw;
+        width: 300px;
+        font-family: optima;
+        font-weight: 500;
+        font-size:  8vw;
+        text-shadow:
+            -.5px .5px blue,
+            -1px .5px black,
+            -1.5px 1px blue;
+    }
+
+    #inGameMenuButton {
+        display: none;
+        border: 3px solid blue;
+        border-radius: 5px;
+        color: black;
+        background: white;
+        font-family: optima;
+        font-weight: 400;
+        font-size: 3vw;
+        position: absolute;
+        top: 5.5vw;
+        left: 10.5vw;
+        font-variant: small-caps;
+        text-shadow:
+            -.5px .5px blue,
+            -1px .5px black,
+            -1.5px 1px blue;
+            
+        box-shadow: -1px 1px 0px 0px, -2px 2px 0px 0px, -3px 3px 0px 0px, -4px 4px 0px 0px blue;
+    }
+
+    #pTotalBuyInSection {
+        position: absolute; 
+        font-size: 7vw;
+        font-weight: 500;
+        top: 28vw;
+        left: 53vw;
+        font-family: optima;
+        font-variant: small-caps;
+        text-shadow:
+            -.5px .5px blue,
+            -1px .5px black,
+            -1.5px 1px blue;
+    }
+
+    #p1TotalyBuytInLabel {
+        position: absolute;
+        display: none;
+        top: 35vw;
+        left: 55vw;
+        font-size: 5vw;
+        font-family: optima;
+        font-variant: small-caps;
+        font-weight: 500;
+    }
+
+    #p2TotalyBuytInLabel {
+        position: absolute;
+        display: none;
+        top: 45vw;
+        left: 55vw;
+        font-size: 5vw;
+        font-family: optima;
+        font-variant: small-caps;
+        font-weight: 500;
+    }
+
+    #p3TotalyBuytInLabel {
+        position: absolute;
+        display: none;
+        top: 55vw;
+        left: 55vw;
+        font-size: 5vw;
+        font-family: optima;
+        font-variant: small-caps;
+        font-weight: 500;
+    }
+
+    #p4TotalyBuytInLabel {
+        position: absolute;
+        display: none;
+        top: 65vw;
+        left: 55vw;
+        font-size: 5vw;
+        font-family: optima;
+        font-variant: small-caps;
+        font-weight: 500;
+    }
+
+    #p5TotalyBuytInLabel {
+        position: absolute;
+        display: none;
+        top: 75vw;
+        left: 55vw;
+        font-size: 5vw;
+        font-family: optima;
+        font-variant: small-caps;
+        font-weight: 500;
+    }
+
+    #p6TotalyBuytInLabel {
+        position: absolute;
+        display: none;
+        top: 85vw;
+        left: 55vw;
+        font-size: 5vw;
+        font-family: optima;
+        font-variant: small-caps;
+        font-weight: 500;
+    }
+
+    #p7TotalyBuytInLabel {
+        position: absolute;
+        display: none;
+        top: 95vw;
+        left: 55vw;
+        font-size: 5vw;
+        font-family: optima;
+        font-variant: small-caps;
+        font-weight: 500;
+    }
+
+    #p8TotalyBuytInLabel {
+        position: absolute;
+        display: none;
+        top: 105vw;
+        left: 55vw;
+        font-size: 5vw;
+        font-family: optima;
+        font-variant: small-caps;
+        font-weight: 500;
+    }
+
+    #p9TotalyBuytInLabel {
+        position: absolute;
+        display: none;
+        top: 115vw;
+        left: 55vw;
+        font-size: 5vw;
+        font-family: optima;
+        font-variant: small-caps;
+        font-weight: 500;
+    }
+
+    #gameInfoSection {
+        position: absolute; 
+        font-size: 7vw;
+        font-weight: 500;
+        top: 28vw;
+        left: 6vw;
+        font-family: optima;
+        font-variant: small-caps;
+        text-shadow:
+            -.5px .5px blue,
+            -1px .5px black,
+            -1.5px 1px blue;
+    }
+
+    #iGmLeaveButton {
+        border: 4px solid black;
+        border-radius: 4px;
+        font-family: optima;
+        font-weight: 500;
+        font-variant: small-caps;
+        font-size: 4vw;
+        background: white;
+        color: black;
+        position: absolute;
+        left: 37vw;
+        top: 2vw;
+
+    }
+
+    #menuBarrierAboveHeader {
+        width: 391px;
+        border: 2px solid blue;
+        position: absolute;
+        top: 6vw;
+    }
+
+    #menuBarrierUnderHeader {
+        width: 391px;
+        border: 2px solid blue;
+        position: absolute;
+        top: 23vw;
+    }
+
+    #menuBarrierUnderSections {
+        width: 391px;
+        border: 2px solid blue;
+        position: absolute;
+        top: 39vw;
+    }
+
+    #changingRoomSizeMidGameButton {
+        position: absolute;
+        border: 2px solid blue;
+        border-radius: 2px;
+        font-family: optima;
+        font-variant: small-caps;
+        background: white;
+        color: black;
+        top: 42.5vw;
+        left: 32.5vw;
+        font-size: 2vw;
+        text-shadow:
+            -.5px .5px blue,
+            -1px .5px black,
+            -1.5px 1px blue;
+            
+        box-shadow: -1px 1px 0px 0px, -2px 2px 0px 0px, -3px 3px 0px 0px, -4px 4px 0px 0px blue;
+    }
+
+    #gIroomSize {
+        position: absolute;
+        font-size: 4.5vw;
+        top: 35vw;
+        left: 2vw;
+        font-family: optima;
+        font-variant: small-caps;
+        font-weight: 500;
+    }
+
+    #gIBigBlind {
+        position: absolute;
+        font-size: 4.5vw;
+        top: 45vw;
+        left: 2vw;
+        font-family: optima;
+        font-variant: small-caps;
+        font-weight: 500;
+    }
+
+    #gISmallBlind {
+        position: absolute;
+        font-size: 4.5vw;
+        top: 55vw;
+        left: 2vw;
+        font-family: optima;
+        font-variant: small-caps;
+        font-weight: 500;
+    }
+
+    #gICurrentRound {
+        position: absolute;
+        font-size: 4.5vw;
+        top: 65vw;
+        left: 2vw;
+        font-family: optima;
+        font-variant: small-caps;
+        font-weight: 500;
+    }
+
+    #gICurrentTurn {
+        position: absolute;
+        font-size: 4vw;
+        top: 75vw;
+        left: 2vw;
+        font-family: optima;
+        font-variant: small-caps;
+        font-weight: 500;
+    }
+
+    #gICurrentPot {
+        position: absolute;
+        font-size: 4.5vw;
+        top: 85vw;
+        left: 2vw;
+        font-family: optima;
+        font-variant: small-caps;
+        font-weight: 500;
+    }
+
+    #xOutOfInGameMenu {
+        position: absolute;
+        border-radius: 5px;
+        border: 3px solid blue;
+        font-family: optima;
+        color: black;
+        background: white;
+        left: 1vw;
+        top: 2.5vw;
+        text-shadow:
+            -.5px .5px blue,
+            -1px .5px black,
+            -1.5px 1px blue;
+            
+        box-shadow: -1px 1px 0px 0px, -2px 2px 0px 0px, -3px 3px 0px 0px, -4px 4px 0px 0px blue;
+    }
+
+    /* Enter Game Code Page Displays */
+    #enterGameCodeLabel {
+        position: absolute;
+        width: 391px;
+        font-size: 12vw;
+        text-align: center;
+        left: 0vw;
+        top: 18vw;
+        font-family: 'georgia', Arial, Helvetica, sans-serif;
+        background-color: white;
+        font-variant: small-caps;
+        border: 3px solid blue;
+        border-radius: 5px;
+        text-shadow:
+            -.5px .5px blue,
+            -1px .5px black,
+            -1.5px 1px blue,
+            -2px 1px black,
+            -2.5px 1.5px black,
+            -3px 1.5px black,
+            -3.5px 2px black;
+        box-shadow: -1px 1px 0px 0px, -2px 2px 0px 0px, -3px 3px 0px 0px, -4px 4px 0px 0px, -5px 5px 0px 0px blue;
+    }
+
+    #enteredGameCode {
+        position: absolute;
+        width: 50vw;
+        border: 3px solid blue;
+        border-radius: 5px;
+        height: 8vw;
+        font-size: 7vw;
+        top: 82vw;
+        left: 22vw;
+        font-family: optima;
+        font-weight: 500;
+        text-align: center
+
+    }
+
+    #gameCodePageInputBoxShadow {
+        position: absolute;
+        width: 56.5vw;
+        border: 4px solid black;
+        border-radius: 4px;
+        height: 11vw;
+        top: 82vw;
+        left: 22vw;
+        text-align: center;
+        box-shadow: -1px 1px 0px 0px, -2px 2px 0px 0px, -3px 3px 0px 0px, -4px 4px 0px 0px, -5px 5px 0px 0px blue;
+    }
+
+    #userSubmitsGameCodeButton {
+        position: absolute;
+        width: 35vw;
+        height: 13vw;
+        text-align: center;
+        font-size: 6vw;
+        border: 3px solid blue;
+        font-weight: 500;
+        border-radius: 5px;
+        top: 115vw;
+        color: black;
+        left: 34vw;
+        font-family: 'georgia', Arial, Helvetica, sans-serif;
+        font-variant: small-caps;
+        background: white;
+        text-shadow:
+            -.5px .5px blue,
+            -1px .5px black,
+            -1.5px 1px blue;
+        box-shadow: -1px 1px 0px 0px, -2px 2px 0px 0px, -3px 3px 0px 0px, -4px 4px 0px 0px, -5px 5px 0px 0px blue;
+
+    }
+
+    #enterGameCodePage {
+        display: none;
+    }
+
+    /* Pre Game Settings Pop Up Displays */
+    #preLobbyGameSettingsPopUpPage {
+        display: none;
+        font-size: 10vw;
+        background: white;
+        font-family: otpima;
+        position: absolute;
+        left: 0vw;
+        top: 45vw;
+        text-align: center;
+        width: 387px;
+        border: 3px solid blue;
+        border-radius: 5px;
+        box-shadow: -1px 1px 0px 0px, -2px 2px 0px 0px, -3px 3px 0px 0px, -4px 4px 0px 0px blue;
+    }
+
+    #bB1, #bB2, #bB3 {
+        display: block;
+    }
+
+    #bB4, #bB5, #bB6, #bB7, #bB8, #bB9 {
+        display: none;
+    }
+
+    #chooseTheBBLabel {
+        font-family: optima;
+        font-variant: small-caps;
+        text-shadow:
+            -.5px .5px blue,
+            -1px .5px black,
+            -1.5px 1px blue;
+    }
+
+    #chooseTheAnteLabel {
+        font-family: optima;
+        font-variant: small-caps;
+        text-shadow:
+            -.5px .5px blue,
+            -1px .5px black,
+            -1.5px 1px blue;
+    }
+
+    #chooseAnteInput {
+        text-align: center;
+        font-family: optima;
+        font-variant: small-caps;
+        border: 3px solid blue;
+        border-radius: 5px;
+        font-size: 6vw;
+        width: 150px;
+    }
+
+
+    #bigBlindOptionSelect {
+        font-family: otpima;
+        border: 3px solid blue;
+        border-radius: 5px;
+        background: white;
+        text-align: center;
+        height: 6vw;
+        width: 150px;
+        color: black;
+        box-shadow: -1px 1px 0px 0px, -2px 2px 0px 0px, -3px 3px 0px 0px, -4px 4px 0px 0px blue;
+    }
+
+    #bigBlindOptionSelect option {
+        font-family: otpima;
+        font-size: 5vw;
+    }
+
+    #hostSetsPreGameSettingsAndStartsGameButton {
+        font-family: optima;
+        border: 3px solid blue;
+        border-radius: 5px;
+        background: white;
+        font-variant: small-caps;
+        font-size: 6vw;
+        color: black;
+        text-shadow:
+            -.5px .5px blue,
+            -1px .5px black,
+            -1.5px 1px blue;
+            
+        box-shadow: -1px 1px 0px 0px, -2px 2px 0px 0px, -3px 3px 0px 0px, -4px 4px 0px 0px blue;
+    }
+
+    /* Player Buttons & Forms */
+    #p1Buttons, #p2Buttons, #p3Buttons, #p4Buttons, #p5Buttons, #p6Buttons, #p7Buttons, #p8Buttons, #p9Buttons {
+        position: absolute;
+        display: none;
+        top: 158.5vw;
+        left: 3vw;
+    }
+
+    #p1BetButton, #p2BetButton, #p3BetButton, #p4BetButton, #p5BetButton, #p6BetButton, #p7BetButton, #p8BetButton, #p9BetButton{
+        font-family: 'optima';
+        text-align: center;
+        font-variant: small-caps;
+        border: 3px solid blue;
+        border-radius: 3px;
+        font-weight: 600;
+        background-color: white;
+        font-size: 4.5vw;
+        color: black;
+        text-shadow:
+            -.5px .5px blue,
+            -1px .5px black,
+            -1.5px 1px blue;
+            
+        box-shadow: -1px 1px 0px 0px, -2px 2px 0px 0px, -3px 3px 0px 0px, -4px 4px 0px 0px blue;
+    }
+
+    #p1CheckButton, #p2CheckButton, #p3CheckButton, #p4CheckButton, #p5CheckButton, #p6CheckButton, #p7CheckButton, #p8CheckButton, #p9CheckButton {
+        font-family: 'optima';
+        text-align: center;
+        font-variant: small-caps;
+        border: 3px solid blue;
+        border-radius: 3px;
+        font-weight: 600;
+        background-color: white;
+        font-size: 4.5vw;
+        color: black;
+        text-shadow:
+            -.5px .5px blue,
+            -1px .5px black,
+            -1.5px 1px blue;
+            
+        box-shadow: -1px 1px 0px 0px, -2px 2px 0px 0px, -3px 3px 0px 0px, -4px 4px 0px 0px blue;
+    }
+
+    #p1CallButton, #p2CallButton, #p3CallButton, #p4CallButton, #p5CallButton, #p6CallButton, #p7CallButton, #p8CallButton, #p9CallButton {
+        font-family: 'optima';
+        text-align: center;
+        font-variant: small-caps;
+        border: 3px solid blue;
+        border-radius: 3px;
+        font-weight: 600;
+        background-color: white;
+        font-size: 4.5vw;
+        color: black;
+        text-shadow:
+            -.5px .5px blue,
+            -1px .5px black,
+            -1.5px 1px blue;
+            
+        box-shadow: -1px 1px 0px 0px, -2px 2px 0px 0px, -3px 3px 0px 0px, -4px 4px 0px 0px blue;
+    }
+
+    #p1FoldButton, #p2FoldButton, #p3FoldButton, #p4FoldButton, #p5FoldButton, #p6FoldButton, #p7FoldButton, #p8FoldButton, #p9FoldButton {
+        font-family: 'optima';
+        text-align: center;
+        font-variant: small-caps;
+        border: 3px solid blue;
+        border-radius: 3px;
+        font-weight: 600;
+        background-color: white;
+        font-size: 4.5vw;
+        color: black;
+        text-shadow:
+            -.5px .5px blue,
+            -1px .5px black,
+            -1.5px 1px blue;
+            
+        box-shadow: -1px 1px 0px 0px, -2px 2px 0px 0px, -3px 3px 0px 0px, -4px 4px 0px 0px blue;
+    }
+
+    #p1BetAmount, #p1RaiseAmount, #p2BetAmount, #p2RaiseAmount, #p3BetAmount, #p3RaiseAmount, #p4BetAmount, #p4RaiseAmount, #p5BetAmount, #p5RaiseAmount, #p6BetAmount, #p6RaiseAmount, #p7BetAmount, #p7RaiseAmount, #p8BetAmount, #p8RaiseAmount, #p9BetAmount, #p9RaiseAmount {
+        display: none;
+        position: absolute;
+        text-align: center;
+        font-size: 3vw;
+        width: 20vw;
+        border: 3px solid black;
+        border-radius: 3px;
+        height: 6vw;
+        top: 119vw;
+        left: 38vw;
+        background: white;
+        color: black;
+        font-family: optima;
+        font-variant: small-caps;
+    }
+
+    #p1BetSubmit, #p1RaiseSubmit, #p2BetSubmit, #p2RaiseSubmit, #p3BetSubmit, #p3RaiseSubmit, #p4BetSubmit, #p4RaiseSubmit, #p5BetSubmit, #p5RaiseSubmit, #p6BetSubmit, #p6RaiseSubmit, #p7BetSubmit, #p7RaiseSubmit, #p8BetSubmit, #p8RaiseSubmit, #p9BetSubmit, #p9RaiseSubmit {
+        display: none;
+        position: absolute;
+        text-align: center;
+        font-size: 2vw;
+        width: 13vw;
+        height: 4.5vw;
+        border: 2px solid black;
+        border-radius: 2px;
+        font-family: otpima;
+        background: white;
+        left: 44vw;
+        top: 130vw;
+        color: black;
+        font-variant: small-caps;
+    }
+
+
+    /* Host Choosing Winner Displays */
+    #hostChoosesWinnerOfRoundPage {
+        display: none;
+        position: absolute;
+        width: 300px;
+        height: 250px;
+        border: 3px solid blue;
+        border-radius: 5px;
+        background: white;
+        text-align: center;
+        left: 11.637vw;
+        top: 42vw;
+        box-shadow: -1px 1px 0px 0px, -2px 2px 0px 0px, -3px 3px 0px 0px, -4px 4px 0px 0px, -5px 5px 0px 0px blue;
+        z-index: 2;
+    }
+
+    #optionsForWinnerOfRound {
+        color: black;
+        font-size: 1.2em;
+        font-family: optima;
+        border: 3px solid blue;
+        width: 45vw;
+        border-radius: 5px;
+        background: white;
+    }
+
+    #hostSubmitsWinnerOfRoundButton {
+        color: black;
+        border: 3px solid blue;
+        border-radius: 5px;
+        background: white;
+        font-family: optima;
+        font-size: 1em;
+        font-variant: small-caps;
+        text-shadow:
+            -.5px .5px blue,
+            -1px .5px black,
+            -1.5px 1px blue;
+        box-shadow: -1px 1px 0px 0px, -2px 2px 0px 0px, -3px 3px 0px 0px, -4px 4px 0px 0px, -5px 5px 0px 0px blue;
+    }
+
+    #choosesWinnerOfRoundLabel {
+        font-family: optima;
+        font-variant: small-caps;
+        font-size: 8vw;
+        text-shadow:
+            -.5px .5px blue,
+            -1px .5px black,
+            -1.5px 1px blue;
+    }
+
+    /* Start Next Round Displays */
+    #startNextRoundAfterChoosingWinnerPage {
+        display: none;
+        position: absolute;
+        width: 300px;
+        border: 3px solid blue;
+        border-radius: 5px;
+        background: white;
+        text-align: center;
+        left: 11.637vw;
+        top: 72vw;
+        box-shadow: -1px 1px 0px 0px, -2px 2px 0px 0px, -3px 3px 0px 0px, -4px 4px 0px 0px, -5px 5px 0px 0px blue;
+        z-index: 1;
+    }
+
+    #startNextRoundButton {
+        color: black;
+        border: 3px solid blue;
+        border-radius: 5px;
+        background: white;
+        font-family: optima;
+        font-size: 1em;
+        font-variant: small-caps;
+        text-shadow:
+            -.5px .5px blue,
+            -1px .5px black,
+            -1.5px 1px blue;
+        box-shadow: -1px 1px 0px 0px, -2px 2px 0px 0px, -3px 3px 0px 0px, -4px 4px 0px 0px, -5px 5px 0px 0px blue;
+    }
+
+    #startNextRoundLabel {
+        font-family: optima;
+        font-variant: small-caps;
+        font-size: 7vw;
+        text-shadow:
+            -.5px .5px blue,
+            -1px .5px black,
+            -1.5px 1px blue;
+    }
+
+    /* User Account Info Page Displays */
+    #userInfoPage {
+        display: none;
+        position: absolute;
+        border: 3px solid blue;
+        border-radius: 5px;
+        left: 12vw;
+        top: 10vw;
+        width: 300px;
+        height: 570px;
+        text-align: center;
+        background: white;
+        box-shadow: -1px 1px 0px 0px, -2px 2px 0px 0px, -3px 3px 0px 0px, -4px 4px 0px 0px, -5px 5px 0px 0px blue;
+    }
+
+    #userLoggedInIndentifier {
+        position: absolute;
+        text-align: center;
+        font-size: 7.5vw;
+        font-family: optima;
+        left: 0vw;
+        top: 10vw;
+        border-bottom: 5px solid blue;
+        width: 300px;
+        text-shadow:
+            -.5px .5px blue,
+            -1px .5px black,
+            -1.5px 1px blue,
+            -2px 1px black;
+    }
+
+    #logInButton {
+        display: block;
+        position: absolute;
+        border: 3px solid blue;
+        border-radius: 5px;
+        font-size: 6vw;
+        font-weight: 500;
+        color: black;
+        left: 22vw;
+        top: 45vw;
+        background: white;
+        font-family: optima;
+        background-color: white;
+        font-variant: small-caps;
+        text-shadow:
+            -.5px .5px blue,
+            -1px .5px black,
+            -1.5px 1px blue;
+            
+        box-shadow: -1px 1px 0px 0px, -2px 2px 0px 0px, -3px 3px 0px 0px, -4px 4px 0px 0px blue;
+    }
+
+    #createAccountButton {
+        display: block;
+        position: absolute;
+        border: 3px solid blue;
+        border-radius: 5px;
+        font-size: 6vw;
+        color: black;
+        left: 11vw;
+        top: 65vw;
+        background: white;
+        font-family: optima;
+        font-weight: 500;
+        font-variant: small-caps;
+        text-shadow:
+            -.5px .5px blue,
+            -1px .5px black,
+            -1.5px 1px blue;
+            
+        box-shadow: -1px 1px 0px 0px, -2px 2px 0px 0px, -3px 3px 0px 0px, -4px 4px 0px 0px blue;
+    }
+
+    #viewGroupsButton {
+        display: none;
+        background: white;
+        color: black;
+        border: 3px solid blue;
+        border-radius: 5px;
+        font-size: 7vw;
+        position: absolute;
+        left: 19vw;
+        top: 62vw;
+        font-family: optima;
+        font-variant: small-caps;
+        text-shadow:
+            -.5px .5px blue,
+            -1px .5px black,
+            -1.5px 1px blue;
+            
+        box-shadow: -1px 1px 0px 0px, -2px 2px 0px 0px, -3px 3px 0px 0px, -4px 4px 0px 0px blue;
+    }
+
+    #viewFriendsButton {
+        display: none;
+        background: white;
+        color: black;
+        border: 3px solid blue;
+        border-radius: 5px;
+        font-size: 7vw;
+        position: absolute;
+        left: 19.5vw;
+        top: 84vw;
+        font-family: optima;
+        font-variant: small-caps;
+        text-shadow:
+            -.5px .5px blue,
+            -1px .5px black,
+            -1.5px 1px blue;
+            
+        box-shadow: -1px 1px 0px 0px, -2px 2px 0px 0px, -3px 3px 0px 0px, -4px 4px 0px 0px blue;
+    }
+
+    #viewProfileInfoButton {
+        display: none;
+        background: white;
+        color: black;
+        border: 3px solid blue;
+        border-radius: 5px;
+        font-size: 7vw;
+        position: absolute;
+        left: 13vw;
+        top: 40vw;
+        font-family: optima;
+        font-variant: small-caps;
+        text-shadow:
+            -.5px .5px blue,
+            -1px .5px black,
+            -1.5px 1px blue;
+            
+        box-shadow: -1px 1px 0px 0px, -2px 2px 0px 0px, -3px 3px 0px 0px, -4px 4px 0px 0px blue;
+    }
+
+    #viewAlertsButton {
+        display: none;
+        background: white;
+        color: black;
+        border: 3px solid blue;
+        border-radius: 5px;
+        font-size: 7vw;
+        position: absolute;
+        left: 21vw;
+        top: 105vw;
+        font-family: optima;
+        font-variant: small-caps;
+        text-shadow:
+            -.5px .5px blue,
+            -1px .5px black,
+            -1.5px 1px blue;
+            
+        box-shadow: -1px 1px 0px 0px, -2px 2px 0px 0px, -3px 3px 0px 0px, -4px 4px 0px 0px blue;
+    }
+
+    #signOutButton {
+        display: none;
+        background: white;
+        color: black;
+        border: 3px solid blue;
+        border-radius: 5px;
+        font-size: 5vw;
+        position: absolute;
+        left: 22vw;
+        top: 130vw;
+        font-family: optima;
+        font-variant: small-caps;
+        text-shadow:
+            -.5px .5px blue,
+            -1px .5px black,
+            -1.5px 1px blue;
+            
+        box-shadow: -1px 1px 0px 0px, -2px 2px 0px 0px, -3px 3px 0px 0px, -4px 4px 0px 0px blue;
+    }
+
+    #logOutConfirmationPage {
+        display: none;
+        position: absolute;
+        border: 3px solid blue;
+        border-radius: 5px;
+        left: 12vw;
+        top: 50vw;
+        width: 300px;
+        height: 100px;
+        text-align: center;
+        background: white;
+        box-shadow: -1px 1px 0px 0px, -2px 2px 0px 0px, -3px 3px 0px 0px, -4px 4px 0px 0px blue;
+    }
+
+    #logOutConfirmationLabel {
+        text-align: center;
+        font-size: 5vw;
+        font-family: optima;
+        font-variant: small-caps;
+        width: 300px;
+        text-shadow:
+            -.5px .5px blue,
+            -1px .5px black,
+            -1.5px 1px blue;
+    }
+
+    #yesLogOutConfirmationButton {
+        display: block;
+        background: white;
+        color: black;
+        border: 3px solid blue;
+        border-radius: 5px;
+        font-size: 5vw;
+        position: absolute;
+        left: 15vw;
+        top: 13vw;
+        font-family: optima;
+        font-variant: small-caps;
+        text-shadow:
+            -.5px .5px blue,
+            -1px .5px black,
+            -1.5px 1px blue;
+            
+        box-shadow: -1px 1px 0px 0px, -2px 2px 0px 0px, -3px 3px 0px 0px, -4px 4px 0px 0px blue;
+    }
+
+    #noLogOutConfirmationButton {
+        display: block;
+        background: white;
+        color: black;
+        border: 3px solid blue;
+        border-radius: 5px;
+        font-size: 5vw;
+        position: absolute;
+        left: 41vw;
+        top: 13vw;
+        font-family: optima;
+        font-variant: small-caps;
+        text-shadow:
+            -.5px .5px blue,
+            -1px .5px black,
+            -1.5px 1px blue;
+            
+        box-shadow: -1px 1px 0px 0px, -2px 2px 0px 0px, -3px 3px 0px 0px, -4px 4px 0px 0px blue;
+    }
+
+    #xOutOfUserInfoPageButton {
+        position: absolute;
+        left: -1vw;
+        top: -1vw;
+        color: black;
+        background: white;
+        font-size: 4vw;
+        border: 3px solid blue;
+        border-radius: 5px;
+        text-shadow:
+            -.5px .5px blue,
+            -1px .5px black,
+            -1.5px 1px blue;
+            
+        box-shadow: -1px 1px 0px 0px, -2px 2px 0px 0px, -3px 3px 0px 0px, -4px 4px 0px 0px blue;
+    }
+
+    #recievingFailureToLoginPage {
+        display: none;
+        position: absolute;
+        border: 3px solid red;
+        border-radius: 5px;
+        left: 15vw;
+        top: 25vw;
+        width: 300px;
+        height: 60px;
+        text-align: center;
+        background: white;
+        box-shadow: -1px 1px 0px 0px, -2px 2px 0px 0px, -3px 3px 0px 0px, -4px 4px 0px 0px red;
+    }
+
+    #recievingFailureToLoginLabel {
+        text-align: center;
+        font-size: 5vw;
+        font-family: optima;
+        font-variant: small-caps;
+        width: 300px;
+        text-shadow:
+            -.5px .5px blue,
+            -1px .5px black,
+            -1.5px 1px blue;
+    }
+
+    #recievingInvalidCredentialsForAccountPage {
+        display: none;
+        position: absolute;
+        border: 3px solid red;
+        border-radius: 5px;
+        left: 15vw;
+        top: 25vw;
+        width: 300px;
+        height: 60px;
+        text-align: center;
+        background: white;
+        box-shadow: -1px 1px 0px 0px, -2px 2px 0px 0px, -3px 3px 0px 0px, -4px 4px 0px 0px red;
+    }
+
+    #recievingInvalidCredentialsForAccountLabel {
+        text-align: center;
+        font-size: 5vw;
+        font-family: optima;
+        font-variant: small-caps;
+        width: 300px;
+        text-shadow:
+            -.5px .5px blue,
+            -1px .5px black,
+            -1.5px 1px blue;
+    }
+
+    /* User Login Page Info Displays */
+    #userLogInPage {
+        display: none;
+        position: absolute;
+        border: 3px solid blue;
+        border-radius: 5px;
+        text-align: center;
+        font-size: 12vw;
+        left: 0vw;
+        top: 31vw;
+        background: white;
+        width: 385px;
+        height: 450px;
+        box-shadow: -1px 1px 0px 0px, -2px 2px 0px 0px, -3px 3px 0px 0px, -4px 4px 0px 0px blue;
+    }
+
+    #theEnteredUsername {
+        position: absolute;
+        font-size: 5vw;
+        border: 3px solid blue; 
+        border-radius: 5px;
+        width: 60vw;
+        height: 7vw;
+        text-align: center;
+        top: 30vw;
+        left: 18vw;
+        color: black;
+        font-weight: 500;
+        background: white;
+        font-family: optima;
+    }
+
+    #enteredUserNameBoxShadow {
+        position: absolute;
+        border: 3px solid blue; 
+        border-radius: 5px;
+        width: 66vw;
+        height: 10vw;
+        top: 30vw;
+        left: 17.5vw;
+        background: white;
+        box-shadow: -1px 1px 0px 0px, -2px 2px 0px 0px, -3px 3px 0px 0px, -4px 4px 0px 0px blue;
+    }
+
+    #theEnteredPassword {
+        position: absolute;
+        font-size: 5vw;
+        border: 3px solid blue; 
+        border-radius: 5px;
+        width: 60vw;
+        height: 7vw;
+        text-align: center;
+        color: black;
+        font-weight: 500;
+        top: 67vw;
+        left: 18vw;
+        background: white;
+        font-family: optima;
+    }
+
+    #enteredPasswordBoxShadow {
+        position: absolute;
+        border: 3px solid blue; 
+        border-radius: 5px;
+        width: 66vw;
+        height: 10vw;
+        top: 67vw;
+        left: 17.5vw;
+        background: white;
+        box-shadow: -1px 1px 0px 0px, -2px 2px 0px 0px, -3px 3px 0px 0px, -4px 4px 0px 0px blue;
+    }
+
+    #logInUserName {
+        font-size: 14vw;
+        position: absolute;
+        left: 24vw;
+        top: 10vw;
+        font-family: optima;
+        font-variant: small-caps;
+        font-weight: 500;
+        text-shadow:
+            -.5px .5px blue,
+            -1px .5px black,
+            -1.5px 1px blue,
+            -2px 1px black;
+    }
+
+    #logInPassword {
+        font-size: 14vw;
+        position: absolute;
+        left: 24vw;
+        top: 49vw;
+        font-family: optima;
+        font-variant: small-caps;
+        font-weight: 500;
+        text-shadow:
+            -.5px .5px blue,
+            -1px .5px black,
+            -1.5px 1px blue,
+            -2px 1px black;
+    }
+
+    #createAccountButtonFromLoginPage {
+        border: 3px solid blue;
+        border-radius: 5px;
+        background: white;
+        color: black;
+        font-size: 4vw;
+        position: absolute;
+        top: 88vw;
+        left: 33vw;
+        font-weight: 500;
+        font-family: optima;
+        font-variant: small-caps;
+        text-shadow:
+            -.5px .5px blue,
+            -1px .5px black,
+            -1.5px 1px blue;
+            
+        box-shadow: -1px 1px 0px 0px, -2px 2px 0px 0px, -3px 3px 0px 0px, -4px 4px 0px 0px blue;
+    }
+
+    #userSubmitsLogInInfoButton {
+        position: absolute;
+        text-align: center;
+        font-size: 4.5vw;
+        border: 3px solid blue;
+        font-weight: 500;
+        border-radius: 4px;
+        top: 103vw;
+        color: black;
+        left: 39vw;
+        font-family: optima;
+        font-variant: small-caps;
+        font-weight: 500;
+        background: white;
+        text-shadow:
+            -.5px .5px blue,
+            -1px .5px black,
+            -1.5px 1px blue;
+            
+        box-shadow: -1px 1px 0px 0px, -2px 2px 0px 0px, -3px 3px 0px 0px, -4px 4px 0px 0px blue;
+    }
+
+    #xOutOfLogInPage {
+        color: black;
+        background: white;
+        position: absolute;
+        font-size: 4vw;
+        border: 3px solid blue;
+        border-radius: 5px;
+        top: -1vw;
+        left: -1vw;
+        text-shadow:
+            -.5px .5px blue,
+            -1px .5px black,
+            -1.5px 1px blue;
+            
+        box-shadow: -1px 1px 0px 0px, -2px 2px 0px 0px, -3px 3px 0px 0px, -4px 4px 0px 0px blue;
+    }
+
+    /* User Create Account Page Displays */
+    #userCreateAccountPage {
+        display: none;
+        position: absolute;
+        border: 3px solid blue;
+        border-radius: 5px;
+        text-align: center;
+        font-size: 12vw;
+        left: 0vw;
+        top: 31vw;
+        background: white;
+        width: 385px;
+        height: 450px;
+        box-shadow: -1px 1px 0px 0px, -2px 2px 0px 0px, -3px 3px 0px 0px, -4px 4px 0px 0px blue;
+    }
+
+    #theRequestedUserName {
+        position: absolute;
+        font-size: 5vw;
+        border: 3px solid blue; 
+        border-radius: 5px;
+        width: 60vw;
+        text-align: center;
+        height: 7vw;
+        top: 30vw;
+        left: 18vw;
+        color: black;
+        font-weight: 500;
+        background: white;
+        font-family: optima;
+    }
+
+    #requestedUserNameBoxShadow {
+        position: absolute;
+        border: 3px solid blue; 
+        border-radius: 5px;
+        width: 66vw;
+        height: 10vw;
+        top: 30vw;
+        left: 17.5vw;
+        background: white;
+        box-shadow: -1px 1px 0px 0px, -2px 2px 0px 0px, -3px 3px 0px 0px, -4px 4px 0px 0px blue;
+    }
+
+    #theRequestedPassword {
+        position: absolute;
+        font-size: 5vw;
+        border: 3px solid blue; 
+        border-radius: 5px;
+        width: 60vw;
+        height: 7vw;
+        text-align: center;
+        color: black;
+        font-weight: 500;
+        top: 67vw;
+        left: 18vw;
+        background: white;
+        font-family: optima;
+    }
+
+    #requestedPasswordBoxShadow {
+        position: absolute;
+        border: 3px solid blue; 
+        border-radius: 5px;
+        width: 66vw;
+        height: 10vw;
+        top: 67vw;
+        left: 17.5vw;
+        background: white;
+        box-shadow: -1px 1px 0px 0px, -2px 2px 0px 0px, -3px 3px 0px 0px, -4px 4px 0px 0px blue;
+    }
+
+    #chooseUserNameLabel {
+        font-size: 14vw;
+        position: absolute;
+        left: 24vw;
+        top: 10vw;
+        font-family: optima;
+        font-variant: small-caps;
+        font-weight: 500;
+        text-shadow:
+            -.5px .5px blue,
+            -1px .5px black,
+            -1.5px 1px blue,
+            -2px 1px black;
+    }
+
+    #choosePasswordLabel {
+        font-size: 14vw;
+        position: absolute;
+        left: 24vw;
+        top: 49vw;
+        font-family: optima;
+        font-variant: small-caps;
+        font-weight: 500;
+        text-shadow:
+            -.5px .5px blue,
+            -1px .5px black,
+            -1.5px 1px blue,
+            -2px 1px black;
+    }
+
+    #userSubmitsCreatingOfAccountButton {
+        position: absolute;
+        text-align: center;
+        font-size: 4.5vw;
+        border: 3px solid blue;
+        font-weight: 500;
+        border-radius: 4px;
+        top: 103vw;
+        color: black;
+        left: 39vw;
+        font-family: optima;
+        font-variant: small-caps;
+        font-weight: 500;
+        background: white;
+        text-shadow:
+            -.5px .5px blue,
+            -1px .5px black,
+            -1.5px 1px blue;
+            
+        box-shadow: -1px 1px 0px 0px, -2px 2px 0px 0px, -3px 3px 0px 0px, -4px 4px 0px 0px blue;
+    }
+
+    #xOutOfCreatingAccountPage {
+        color: black;
+        background: white;
+        position: absolute;
+        font-size: 4vw;
+        border: 3px solid blue;
+        border-radius: 6px;
+        top: -1vw;
+        left: -1vw;
+        text-shadow:
+            -.5px .5px blue,
+            -1px .5px black,
+            -1.5px 1px blue;
+            
+        box-shadow: -1px 1px 0px 0px, -2px 2px 0px 0px, -3px 3px 0px 0px, -4px 4px 0px 0px blue;
+    }
+
+    /* Friends Page Displays */
+    #friendsPage {
+        display: none;
+        position: absolute;
+        text-align: center;
+        border: 3px solid blue;
+        border-radius: 5px;
+        width: 300px;
+        height: 600px;
+        background-color: white;
+        z-index: 1;
+        top: 10vw;
+        left: 12vw;
+        box-shadow: -1px 1px 0px 0px, -2px 2px 0px 0px, -3px 3px 0px 0px, -4px 4px 0px 0px, -5px 5px 0px 0px blue;
+    }
+
+    #friendsPageLabel {
+        font-size: 11vw;
+        font-family: optima;
+        position: absolute;
+        left: 0vw;
+        top: 5vw;
+        width: 300px;
+        border-bottom: 3px solid blue;
+        font-variant: small-caps;
+        text-shadow:
+            -.5px .5px blue,
+            -1px .5px black,
+            -1.5px 1px blue;
+    }
+
+    #friendsList {
+        position: absolute;
+        text-align: left;
+        top: 33vw;
+        border: 3px solid blue;
+        border-radius: 5px;
+        width: 257px;
+        height: 420px;
+        box-shadow: -1px 1px 0px 0px, -2px 2px 0px 0px, -3px 3px 0px 0px, -4px 4px 0px 0px blue;
+    }
+
+    #addMoreFriendsButton {
+        display: block;
+        position: absolute;
+        border: 3px solid blue;
+        border-radius: 5px;
+        color: black;
+        background: white;
+        font-size: 5vw;
+        left: 21vw;
+        top: 23vw;
+        font-family: optima;
+        font-weight: 500;
+        font-variant: small-caps;
+        text-shadow:
+            -.5px .5px blue,
+            -1px .5px black,
+            -1.5px 1px blue;
+            
+        box-shadow: -1px 1px 0px 0px, -2px 2px 0px 0px, -3px 3px 0px 0px, -4px 4px 0px 0px blue;
+
+    }
+
+    #addingFriendsPage {
+        display: none;
+        position: absolute;
+        border: 3px solid blue;
+        border-radius: 5px;
+        width: 300px;
+        text-align: center;
+        left: 12vw;
+        background: white;
+        z-index: 1;
+        height: 270px;
+        top: 40vw;
+        box-shadow: -1px 1px 0px 0px, -2px 2px 0px 0px, -3px 3px 0px 0px, -4px 4px 0px 0px, -5px 5px 0px 0px blue;
+    }
+
+    #addingFriendsPageLabel {
+        display: block;
+        font-size: 7.5vw;
+        width: 300px;
+        border-bottom: 3px solid blue;
+        font-variant: small-caps;
+        font-family: optima;
+        text-shadow:
+            -.5px .5px blue,
+            -1px .5px black,
+            -1.5px 1px blue;
+
+    }
+
+    #addingFriendsInput {
+        border: 3px solid blue;
+        border-radius: 5px;
+        text-align: center;
+        color: black;
+        font-family: optima;
+        width: 40vw;
+        font-size: 5vw;
+        font-variant: small-caps;
+        font-weight: 500;
+        box-shadow: -1px 1px 0px 0px, -2px 2px 0px 0px, -3px 3px 0px 0px, -4px 4px 0px 0px blue;
+    }
+
+    #xOutOfAddingFriendPage {
+        color: black;
+        background: white;
+        position: absolute;
+        font-size: 4vw;
+        border: 3px solid blue;
+        border-radius: 5px;
+        top: -1vw;
+        left: -1vw;
+        text-shadow:
+            -.5px .5px blue,
+            -1px .5px black,
+            -1.5px 1px blue;
+            
+        box-shadow: -1px 1px 0px 0px, -2px 2px 0px 0px, -3px 3px 0px 0px, -4px 4px 0px 0px blue;
+    }
+
+    #sendingFriendRequestButton {
+        border: 3px solid blue;
+        border-radius: 5px;
+        color: black;
+        background: white;
+        font-family: optima;
+        font-size: 4.5vw;
+        position: absolute;
+        left: 20vw;
+        top: 52vw;
+        font-variant: small-caps;
+        font-weight: 500;
+        text-shadow:
+            -.5px .5px blue,
+            -1px .5px black,
+            -1.5px 1px blue;
+            
+        box-shadow: -1px 1px 0px 0px, -2px 2px 0px 0px, -3px 3px 0px 0px, -4px 4px 0px 0px blue;
+    }
+
+    #xOutOfFriendsPage {
+        color: black;
+        background: white;
+        position: absolute;
+        font-size: 4vw;
+        border: 3px solid blue;
+        border-radius: 5px;
+        top: -1vw;
+        left: -1vw;
+        text-shadow:
+            -.5px .5px blue,
+            -1px .5px black,
+            -1.5px 1px blue;
+            
+        box-shadow: -1px 1px 0px 0px, -2px 2px 0px 0px, -3px 3px 0px 0px, -4px 4px 0px 0px blue;
+    }
+
+    /* Alerts Page Displays */
+    #alertsPage {
+        display: none;
+        position: absolute;
+        border: 3px solid blue;
+        border-radius: 5px;
+        background: white;
+        top: 10vw;
+        left: 12vw;
+        width: 300px;
+        height: 600px;
+        text-align: center;
+        box-shadow: -1px 1px 0px 0px, -2px 2px 0px 0px, -3px 3px 0px 0px, -4px 4px 0px 0px blue;
+    }
+
+    #noPendingAlertsMessage {
+        display: block;
+        font-size: 5vw;
+        font-family: optima;
+        text-shadow:
+            -.5px .5px blue,
+            -1px .5px black,
+            -1.5px 1px blue;
+    }
+
+    #alertsPageLabel {
+        font-size: 11vw;
+        /* font-weight: 550; */
+        font-family: optima;
+        border-bottom: 3px solid blue;
+        width: 300px;
+        color: black;
+        position: absolute;
+        left: 0vw;
+        top: 5vw;
+        font-variant: small-caps;
+        text-shadow:
+            -.5px .5px blue,
+            -1px .5px black,
+            -1.5px 1px blue,
+            -2px 1px black;
+    }
+
+    #alertsPageList {
+        text-align: center;
+        border: 3px solid blue;
+        border-radius: 5px;
+        position: absolute;
+        left: 0vw;
+        top: 19vw;
+        width: 296px;
+        height: 500px;
+        box-shadow: -1px 1px 0px 0px, -2px 2px 0px 0px, -3px 3px 0px 0px, -4px 4px 0px 0px blue;
+    }
+
+    #xOutOfAlertsPageBttn {
+        color: black;
+        background: white;
+        position: absolute;
+        font-size: 4vw;
+        border: 3px solid blue;
+        border-radius: 5px;
+        top: -1vw;
+        left: -1vw;
+        text-shadow:
+            -.5px .5px blue,
+            -1px .5px black,
+            -1.5px 1px blue;
+            
+        box-shadow: -1px 1px 0px 0px, -2px 2px 0px 0px, -3px 3px 0px 0px, -4px 4px 0px 0px blue;
+    }
+
+    /* Groups Page Displays */
+    #groupsPage {
+        display: none;
+        position: absolute;
+        border: 3px solid blue;
+        border-radius: 5px;
+        text-align: center;
+        height: 600px;
+        width: 300px;
+        top: 10vw;
+        left: 12vw;
+        background: white;
+        z-index: 1;
+        text-align: center;
+        box-shadow: -1px 1px 0px 0px, -2px 2px 0px 0px, -3px 3px 0px 0px, -4px 4px 0px 0px, -5px 5px 0px 0px blue;
+    }
+
+    #groupsPageLabel {
+        font-size: 11vw;
+        font-family: optima;
+        position: absolute;
+        left: 0vw;
+        top: 5vw;
+        width: 300px;
+        border-bottom: 3px solid blue;
+        font-variant: small-caps;
+        text-shadow:
+            -.5px .5px blue,
+            -1px .5px black,
+            -1.5px 1px blue,
+            -2px 1px black;
+    }
+
+    #createNewGroupButton {
+        border: 3px solid blue;
+        border-radius: 5px;
+        position: absolute;
+        left: 18vw;
+        top: 25vw;
+        color: black;
+        font-size: 5vw;
+        background: white;
+        font-family: optima;
+        font-variant: small-caps;
+        text-shadow:
+            -.5px .5px blue,
+            -1px .5px black,
+            -1.5px 1px blue;
+            
+        box-shadow: -1px 1px 0px 0px, -2px 2px 0px 0px, -3px 3px 0px 0px, -4px 4px 0px 0px blue;
+    }
+
+    #groupsList {
+        position: absolute;
+        border: 3px solid blue;
+        border-radius: 5px;
+        width: 258px;
+        height: 440px;
+        left: -.5vw;
+        top: 35vw;
+        text-align: left;
+        box-shadow: -1px 1px 0px 0px, -2px 2px 0px 0px, -3px 3px 0px 0px, -4px 4px 0px 0px, -5px 5px 0px 0px blue;
+    }
+
+    #creatingNewGroupPage {
+        display: none;
+        position: absolute;
+        text-align: center;
+        border: 3px solid blue;
+        border-radius: 5px;
+        height: 600px;
+        width: 300px;
+        top: 10vw;
+        left: 12vw;
+        background: white;
+        z-index: 1;
+        box-shadow: -1px 1px 0px 0px, -2px 2px 0px 0px, -3px 3px 0px 0px, -4px 4px 0px 0px, -5px 5px 0px 0px blue;
+    }
+
+    #creatingNewGroupInfoLabel {
+        text-decoration: underline;
+        font-size: 11vw;
+        font-family: optima;
+        text-shadow:
+            -.5px .5px blue,
+            -1px .5px black,
+            -1.5px 1px blue;
+
+    }
+
+    #newGroupNameLabel {
+        position: absolute;
+        top: 16.5vw;
+        left: 18.5vw;
+        font-size: 8vw;
+        font-family: optima;
+        font-variant: small-caps;
+        text-shadow:
+            -.5px .5px blue,
+            -1px .5px black,
+            -1.5px 1px blue;
+        
+    }
+
+    #newGroupNameInput {
+        text-align: center;
+        position: absolute;
+        top: 28vw;
+        left: 12vw;
+        height: 7vw;
+        width: 48vw;
+        border: 3px solid blue;
+        border-radius: 5px;
+        color: black;
+        font-size: 5vw;
+        background: white;
+        font-family: optima;
+    }
+
+    #groupNameInputBoxShadow {
+        position: absolute;
+        top: 28vw;
+        left: 11.5vw;
+        height: 10vw;
+        width: 53vw;
+        border: 3px solid black;
+        border-radius: 5px;
+        color: black;
+        background: white;
+        box-shadow: -1px 1px 0px 0px, -2px 2px 0px 0px, -3px 3px 0px 0px, -4px 4px 0px 0px, -5px 5px 0px 0px blue;
+    }
+
+    #newGroupRoomSizeLabel {
+        font-size: 8.5vw;
+        position: absolute;
+        top: 48vw;
+        left: 9.3vw;
+        font-family: optima;
+        font-variant: small-caps;
+        text-shadow:
+            -.5px .5px blue,
+            -1px .5px black,
+            -1.5px 1px blue;
+    }
+
+    #newGroupRoomSizeInput {
+        text-align: center;
+        color: black;
+        font-size: 6.5vw;
+        border-top: 3px solid blue;
+        border-bottom: 3px solid blue;
+        font-family: optima;
+    }
+
+    #newGroupRoomSizeInput input {
+        margin: 15px;
+        font-family: optima;
+    }
+
+    #newGroupAnteLabel {
+        position: absolute;
+        left: 19vw;
+        font-size: 8.3vw;
+        font-weight: 500;
+        font-family: optima;
+        font-variant: small-caps;
+        text-shadow:
+            -.5px .5px blue,
+            -1px .5px black,
+            -1.5px 1px blue;
+    }
+
+    #newGroupAnteInput {
+        position: absolute;
+        text-align: center;
+        border: 3px solid blue;
+        color: black;
+        font-size: 5vw;
+        width: 48vw;
+        height: 7vw;
+        left: 12vw;
+        top: 112vw;
+        background: white;
+        border-radius: 5px;
+        font-family: optima;
+    }
+
+    #groupAnteInputBoxShadow {
+        display: block;
+        position: absolute;
+        border: 3px solid black;
+        border-radius: 5px;
+        color: black;
+        width: 53vw;
+        height: 10vw;
+        top: 112vw;
+        left: 11.5vw;
+        background: white;
+        box-shadow: -1px 1px 0px 0px, -2px 2px 0px 0px, -3px 3px 0px 0px, -4px 4px 0px 0px, -5px 5px 0px 0px blue;
+    }
+
+    #xOutOfCreatingNewGroup {
+        color: black;
+        background: white;
+        position: absolute;
+        font-size: 4vw;
+        border: 3px solid blue;
+        border-radius: 5px;
+        top: -1vw;
+        left: -1vw;
+        text-shadow:
+            -.5px .5px blue,
+            -1px .5px black,
+            -1.5px 1px blue;
+            
+        box-shadow: -1px 1px 0px 0px, -2px 2px 0px 0px, -3px 3px 0px 0px, -4px 4px 0px 0px blue;
+    }
+
+    #userSubmitsNewlyCreatedGroup {
+        border: 3px solid blue;
+        border-radius: 5px;
+        color: black;
+        background: white;
+        font-size: 5vw;
+        font-family: optima;
+        position: absolute;
+        top: 135vw;
+        left: 25vw;
+        text-shadow:
+            -.5px .5px blue,
+            -1px .5px black,
+            -1.5px 1px blue;
+            
+        box-shadow: -1px 1px 0px 0px, -2px 2px 0px 0px, -3px 3px 0px 0px, -4px 4px 0px 0px blue;
+    }
+
+    #viewingTheChosenGroupPage {
+        display: none;
+        position: absolute;
+        border: 3px solid blue;
+        border-radius: 5px;
+        width: 300px;
+        height: 600px;
+        top: 10vw;
+        left: 12vw;
+        background: white;
+        z-index: 1;
+        text-align: center;
+        box-shadow: -1px 1px 0px 0px, -2px 2px 0px 0px, -3px 3px 0px 0px, -4px 4px 0px 0px blue;
+    }
+
+    #vtcgInvFriends2GroupButton {
+        display: block;
+        border: 3px solid blue;
+        border-radius: 5px;
+        color: black;
+        background: white;
+        position: absolute;
+        left: 21.5vw;
+        top: 84vw;
+        font-size: 4vw;
+        font-family: optima;
+        font-variant: small-caps;
+        font-weight: 500;
+        text-shadow:
+            -.5px .5px blue,
+            -1px .5px black,
+            -1.5px 1px blue;
+            
+        box-shadow: -1px 1px 0px 0px, -2px 2px 0px 0px, -3px 3px 0px 0px, -4px 4px 0px 0px blue;
+
+    }
+
+    #vtcgStartGameButton {
+        border: 3px solid blue;
+        border-radius: 5px;
+        color: black;
+        display: block;
+        background: white;
+        position: absolute;
+        left: 7vw;
+        top: 142vw;
+        font-size: 4vw;
+        font-family: optima;
+        font-variant: small-caps;
+        font-weight: 500;
+        text-shadow:
+            -.5px .5px blue,
+            -1px .5px black,
+            -1.5px 1px blue;
+            
+        box-shadow: -1px 1px 0px 0px, -2px 2px 0px 0px, -3px 3px 0px 0px, -4px 4px 0px 0px blue;
+    }
+
+
+    #vtcgDeleteGroupButton {
+        border: 3px solid blue;
+        border-radius: 5px;
+        color: black;
+        display: block;
+        background: white;
+        position: absolute;
+        top: 141.75vw;
+        left: 38vw;
+        font-size: 4vw;
+        font-family: optima;
+        font-variant: small-caps;
+        font-weight: 500;
+        text-shadow:
+            -.5px .5px blue,
+            -1px .5px black,
+            -1.5px 1px blue;
+            
+        box-shadow: -1px 1px 0px 0px, -2px 2px 0px 0px, -3px 3px 0px 0px, -4px 4px 0px 0px blue;
+    }
+
+    #vtcgMembersList {
+        position: absolute;
+        display: block;
+        border: 3px solid blue;
+        border-radius: 5px;
+        height: 170px;
+        width: 255px;
+        top: 89vw;
+        font-family: optima;
+        text-align: left;
+        box-shadow: -1px 1px 0px 0px, -2px 2px 0px 0px, -3px 3px 0px 0px, -4px 4px 0px 0px blue;
+    }
+
+    #vtcgMembersLabel {
+        position: absolute;
+        font-size: 7vw;
+        top: 76vw;
+        left: 26vw;
+        /* font-weight: 600; */
+        font-family: optima;
+        font-variant: small-caps;
+        text-shadow:
+            -.5px .5px blue,
+            -1px .5px black,
+            -1.5px 1px blue;
+
+    }
+
+    #vtcgAnteLabel {
+        position: absolute;
+        left: 31.5vw;
+        top: 54vw;
+        font-size: 7vw;
+        /* font-weight: 600; */
+        font-family: optima;
+        font-variant: small-caps;
+        text-shadow:
+            -.5px .5px blue,
+            -1px .5px black,
+            -1.5px 1px blue;
+
+    }
+
+    #vtcgAnteInput {
+        position: absolute;
+        border: 3px solid blue;
+        border-radius: 5px;
+        color: black;
+        text-align: center;
+        background: white;
+        font-size: 4vw;
+        width: 30.769vw;
+        font-family: optima;
+        height: 5vw;
+        left: 20vw;
+        top: 62vw;
+        
+    }
+
+    #vtcgAnteInputBoxShadow {
+        position: absolute;
+        border: 3px solid black;
+        border-radius: 5px;
+        color: black;
+        background: white;
+        width: 35vw;
+        height: 8vw;
+        left: 20vw;
+        top: 61.75vw;
+        box-shadow: -1px 1px 0px 0px, -2px 2px 0px 0px, -3px 3px 0px 0px, -4px 4px 0px 0px blue;
+    }
+
+    #vtcgRSLabel {
+        position: absolute;
+        font-size: 7vw;
+        left: 24vw;
+        top: 33vw;
+        /* font-weight: 600; */
+        font-family: optima;
+        font-variant: small-caps;
+        text-shadow:
+            -.5px .5px blue,
+            -1px .5px black,
+            -1.5px 1px blue;
+
+    }
+
+    #vtcgRSInput {
+        border: 3px solid blue;
+        border-radius: 5px;
+        color: black;
+        text-align: center;
+        background: white;
+        font-family: optima;
+        font-size: 4vw;
+        width: 30.769vw;
+        position: absolute;
+        left: 20vw;
+        top: 41vw;
+    }
+
+    #vtcgRoomSizeInputBoxShadow {
+        position: absolute;
+        border: 3px solid black;
+        border-radius: 5px;
+        color: black;
+        background: white;
+        width: 35vw;
+        height: 8vw;
+        left: 20vw;
+        top: 41.5vw;
+        box-shadow: -1px 1px 0px 0px, -2px 2px 0px 0px, -3px 3px 0px 0px, -4px 4px 0px 0px blue;
+    }
+
+    #vtcgEditGroupInfoBttn {
+        display: block;
+        position: absolute;
+        border: 3px solid blue;
+        border-radius: 5px;
+        color: black;
+        background: white;
+        border-radius: 5px;
+        left: 29vw;
+        top: 17vw;
+        font-size: 4vw;
+        font-family: optima;
+        font-variant: small-caps;
+        font-weight: 500;
+        text-shadow:
+            -.5px .5px blue,
+            -1px .5px black,
+            -1.5px 1px blue;
+            
+        box-shadow: -1px 1px 0px 0px, -2px 2px 0px 0px, -3px 3px 0px 0px, -4px 4px 0px 0px blue;
+
+    }
+
+    #vtcgSaveGroupInfoBttn {
+        display: none;
+        position: absolute;
+        border: 3px solid blue;
+        border-radius: 5px;
+        color: black;
+        background: white;
+        border-radius: 5px;
+        font-size: 4vw;
+        left: 28.5vw;
+        top: 17vw;
+        font-family: optima;
+        font-variant: small-caps;
+        font-weight: 500;
+        text-shadow:
+            -.5px .5px blue,
+            -1px .5px black,
+            -1.5px 1px blue;
+            
+        box-shadow: -1px 1px 0px 0px, -2px 2px 0px 0px, -3px 3px 0px 0px, -4px 4px 0px 0px blue;
+
+    }
+
+    #vtcgLabel {
+        font-size: 11vw;
+        position: absolute;
+        text-align: center;
+        width: 300px;
+        left: 0vw;
+        top: 5vw;
+        border-bottom: 3px solid blue;
+        font-family: optima;
+        /* font-weight: 550; */
+        font-variant: small-caps;
+        text-shadow:
+            -.5px .5px blue,
+            -1px .5px black,
+            -1.5px 1px blue;
+
+    }
+
+    #xOutOfvtcg {
+        color: black;
+        background: white;
+        position: absolute;
+        font-size: 4vw;
+        border: 3px solid blue;
+        border-radius: 5px;
+        top: -1vw;
+        left: -1vw;
+        text-shadow:
+            -.5px .5px blue,
+            -1px .5px black,
+            -1.5px 1px blue;
+            
+        box-shadow: -1px 1px 0px 0px, -2px 2px 0px 0px, -3px 3px 0px 0px, -4px 4px 0px 0px blue;
+    }
+
+    #invitingMembersToGroupPage {
+        display: none;
+        position: absolute;
+        border: 3px solid blue;
+        border-radius: 5px;
+        width: 300px;
+        text-align: center;
+        left: 12vw;
+        background: white;
+        z-index: 1;
+        height: 250px;
+        top: 40vw;
+        box-shadow: -1px 1px 0px 0px, -2px 2px 0px 0px, -3px 3px 0px 0px, -4px 4px 0px 0px blue;
+    }
+
+    #invitingUserToGroupLabel {
+        display: block;
+        font-size: 7.5vw;
+        width: 300px;
+        border-bottom: 3px solid blue;
+        font-family: optima;
+        font-variant: small-caps;
+        text-shadow:
+            -.5px .5px blue,
+            -1px .5px black,
+            -1.5px 1px blue;
+    }
+
+    #userToInviteToGroupInput {
+        position: absolute;
+        border: 3px solid blue;
+        border-radius: 5px;
+        text-align: center;
+        color: black;
+        font-family: optima;
+        width: 40vw;
+        height: 7vw;
+        font-size: 5vw;
+        left: 15vw;
+        top: 25vw;
+    }
+
+    #userToInvite2GroupInputBoxShadow {
+        position: absolute;
+        border: 3px solid black;
+        border-radius: 5px;
+        color: black;
+        width: 40vw;
+        width: 46vw;
+        height: 10vw;
+        left: 14.5vw;
+        top: 25vw;
+        box-shadow: -1px 1px 0px 0px, -2px 2px 0px 0px, -3px 3px 0px 0px, -4px 4px 0px 0px blue;
+    }
+
+    #xOutOfInvUser2Group {
+        color: black;
+        background: white;
+        position: absolute;
+        font-size: 4vw;
+        border: 3px solid blue;
+        border-radius: 5px;
+        top: -1vw;
+        left: -1vw;
+        text-shadow:
+            -.5px .5px blue,
+            -1px .5px black,
+            -1.5px 1px blue;
+            
+        box-shadow: -1px 1px 0px 0px, -2px 2px 0px 0px, -3px 3px 0px 0px, -4px 4px 0px 0px blue;
+    }
+
+    #invitingUserToGroupSubmit {
+        border: 2px solid blue;
+        border-radius: 2px;
+        color: black;
+        background: white;
+        font-family: optima;
+        font-variant: small-caps;
+        font-size: 4vw;
+        position: absolute;
+        left: 29vw;
+        top: 55vw;
+        text-shadow:
+            -.5px .5px blue,
+            -1px .5px black,
+            -1.5px 1px blue;
+            
+        box-shadow: -1px 1px 0px 0px, -2px 2px 0px 0px, -3px 3px 0px 0px, -4px 4px 0px 0px blue;
+    }
+
+    #viewFriends2Inv2Group {
+        border: 2px solid blue;
+        border-radius: 2px;
+        color: black;
+        background: white;
+        font-family: optima;
+        font-variant: small-caps;
+        font-size: 4vw;
+        position: absolute;
+        left: 23vw;
+        top: 43vw;
+        text-shadow:
+            -.5px .5px blue,
+            -1px .5px black,
+            -1.5px 1px blue;
+            
+        box-shadow: -1px 1px 0px 0px, -2px 2px 0px 0px, -3px 3px 0px 0px, -4px 4px 0px 0px blue;
+    }
+
+    #xOutOfGroupsPage {
+        color: black;
+        background: white;
+        position: absolute;
+        font-size: 4vw;
+        border: 3px solid blue;
+        border-radius: 5px;
+        top: -1vw;
+        left: -1vw;
+        text-shadow:
+            -.5px .5px blue,
+            -1px .5px black,
+            -1.5px 1px blue;
+            
+        box-shadow: -1px 1px 0px 0px, -2px 2px 0px 0px, -3px 3px 0px 0px, -4px 4px 0px 0px blue;
+    }
+
+    /* Inviting User To Game Displays */
+    #invitingUserToGamePage {
+        display: none;
+        position: absolute;
+        text-align: center;
+        border: 3px solid blue;
+        border-radius: 5px;
+        font-size: 10vw;
+        left: 0vw;
+        top: 15vw;
+        width: 388px;
+        background-color: white;
+        box-shadow: -1px 1px 0px 0px, -2px 2px 0px 0px, -3px 3px 0px 0px, -4px 4px 0px 0px, -5px 5px 0px 0px blue;
+    }
+
+    #invitingUserToGameLabel {
+        font-family: optima;
+        text-shadow:
+            -.5px .5px blue,
+            -1px .5px black,
+            -1.5px 1px blue;
+    }
+
+    #userBeingInvitedToGame {
+        border: 3px solid blue;
+        border-radius: 5px;
+        font-family: optima;
+        text-align: center;
+    }
+
+    #userSubmitsInviteButton {
+        border: 3px solid blue;
+        color: black;
+        font-family: optima;
+        border-radius: 5px;
+        background: white;
+        font-variant: small-caps;
+        text-shadow:
+            -.5px .5px blue,
+            -1px .5px black,
+            -1.5px 1px blue;
+            
+        box-shadow: -1px 1px 0px 0px, -2px 2px 0px 0px, -3px 3px 0px 0px, -4px 4px 0px 0px blue;
+    }
+
+    #xOutOfInvitingUserToGamePage {
+        border: 2px solid blue;
+        border-radius: 5px;
+        font-family: optima;
+        background: white;
+        color: black;
+        text-shadow:
+            -.5px .5px blue,
+            -1px .5px black,
+            -1.5px 1px blue;
+            
+        box-shadow: -1px 1px 0px 0px, -2px 2px 0px 0px, -3px 3px 0px 0px, -4px 4px 0px 0px blue;
+    }
+
+    /* Displaying Player Actions Displays */
+    #displayActionP1, #displayActionP2, #displayActionP3, #displayActionP4, #displayActionP5, #displayActionP6, #displayActionP7, #displayActionP8, #displayActionP9 {
+        display: none;
+        position: absolute;
+        border: 2px solid black;
+        color: black;
+        background: white;
+        font-family: optima;
+        width: 102px;
+        text-align: center;
+    }
+
+    /* Re Buy Page Displays */
+    #playerReBuyingPage {
+        display: none;
+        border: 3px solid blue;
+        border-radius: 5px;
+        position: absolute;
+        width: 300px;
+        height: 300px;
+        position: absolute;
+        top: 30vw;
+        left: 12vw;
+        background: white;
+        text-align: center;
+        box-shadow: -1px 1px 0px 0px, -2px 2px 0px 0px, -3px 3px 0px 0px, -4px 4px 0px 0px blue;
+
+    }
+
+    #playerReBuyLabel {
+        font-size: 7vw;
+        font-family: optima;
+        position: absolute;
+        left: 0vw;
+        top: 5vw;
+        width: 300px;
+        border-bottom: 3px solid blue;
+        font-variant: small-caps;
+        text-shadow:
+            -.5px .5px blue,
+            -1px .5px black,
+            -1.5px 1px blue;
+    }
+
+    #playerReBuyChipsInput {
+        border: 3px solid blue;
+        border-radius: 5px;
+        text-align: center;
+        color: black;
+        font-family: optima;
+        width: 40vw;
+        font-size: 5vw;
+        font-variant: small-caps;
+        font-weight: 500;
+        box-shadow: -1px 1px 0px 0px, -2px 2px 0px 0px, -3px 3px 0px 0px, -4px 4px 0px 0px blue;
+        position: absolute;
+        top: 40vw;
+        left: 17vw;
+    }
+
+    #playerReBuySubmit {
+        border: 3px solid blue;
+        border-radius: 5px;
+        color: black;
+        background: white;
+        font-family: optima;
+        font-size: 4.5vw;
+        position: absolute;
+        left: 27vw;
+        top: 67vw;
+        font-variant: small-caps;
+        font-weight: 500;
+        text-shadow:
+            -.5px .5px blue,
+            -1px .5px black,
+            -1.5px 1px blue;
+            
+        box-shadow: -1px 1px 0px 0px, -2px 2px 0px 0px, -3px 3px 0px 0px, -4px 4px 0px 0px blue;
+    }
+
+    #xOutOfReBuyPage {
+        color: black;
+        background: white;
+        position: absolute;
+        font-size: 4vw;
+        border: 3px solid blue;
+        border-radius: 5px;
+        top: -1vw;
+        left: -1vw;
+        text-shadow:
+            -.5px .5px blue,
+            -1px .5px black,
+            -1.5px 1px blue;
+            
+        box-shadow: -1px 1px 0px 0px, -2px 2px 0px 0px, -3px 3px 0px 0px, -4px 4px 0px 0px blue;
+    }
+
+    /* Leave Game Manually Page Displays */
+    #confirmationToLeaveGameManuallyPage {
+        display: none;
+        border: 3px solid blue;
+        border-radius: 5px;
+        position: absolute;
+        width: 300px;
+        height: 200px;
+        position: absolute;
+        top: 40vw;
+        left: 12vw;
+        background: white;
+        text-align: center;
+        box-shadow: -1px 1px 0px 0px, -2px 2px 0px 0px, -3px 3px 0px 0px, -4px 4px 0px 0px blue;
+    }
+
+    #leaveGameConfirmationLabel {
+        font-size: 5vw;
+        font-family: optima;
+        position: absolute;
+        left: 0vw;
+        top: 5vw;
+        width: 300px;
+        border-bottom: 3px solid blue;
+        font-variant: small-caps;
+        text-shadow:
+            -.5px .5px blue,
+            -1px .5px black,
+            -1.5px 1px blue;
+    }
+
+    #userConfirmsLeaveGame {
+        border: 3px solid blue;
+        border-radius: 5px;
+        color: black;
+        background: white;
+        font-family: optima;
+        font-size: 4.5vw;
+        position: absolute;
+        left: 18vw;
+        top: 37vw;
+        font-variant: small-caps;
+        font-weight: 500;
+        text-shadow:
+            -.5px .5px blue,
+            -1px .5px black,
+            -1.5px 1px blue;
+            
+        box-shadow: -1px 1px 0px 0px, -2px 2px 0px 0px, -3px 3px 0px 0px, -4px 4px 0px 0px blue;
+    }
+
+    #userDeclinesLeaveGame {
+        border: 3px solid blue;
+        border-radius: 5px;
+        color: black;
+        background: white;
+        font-family: optima;
+        font-size: 4.5vw;
+        position: absolute;
+        left: 40vw;
+        top: 37vw;
+        font-variant: small-caps;
+        font-weight: 500;
+        text-shadow:
+            -.5px .5px blue,
+            -1px .5px black,
+            -1.5px 1px blue;
+            
+        box-shadow: -1px 1px 0px 0px, -2px 2px 0px 0px, -3px 3px 0px 0px, -4px 4px 0px 0px blue;
+    }
+
+    /* Confirmation To Disband Game Page Displays */
+    #confirmationToGoHomeWhileCreatingGamePage {
+        display: none;
+        border: 3px solid blue;
+        border-radius: 5px;
+        position: absolute;
+        width: 300px;
+        height: 200px;
+        position: absolute;
+        top: 40vw;
+        left: 12vw;
+        background: white;
+        text-align: center;
+        box-shadow: -1px 1px 0px 0px, -2px 2px 0px 0px, -3px 3px 0px 0px, -4px 4px 0px 0px blue;
+    }
+
+    #disbandGameConfirmationLabel {
+        font-size: 5vw;
+        font-family: optima;
+        position: absolute;
+        left: 0vw;
+        top: 5vw;
+        width: 300px;
+        border-bottom: 3px solid blue;
+        font-variant: small-caps;
+        text-shadow:
+            -.5px .5px blue,
+            -1px .5px black,
+            -1.5px 1px blue;
+    }
+
+    #userConfirmsDisbandGame {
+        border: 3px solid blue;
+        border-radius: 5px;
+        color: black;
+        background: white;
+        font-family: optima;
+        font-size: 4.5vw;
+        position: absolute;
+        left: 18vw;
+        top: 37vw;
+        font-variant: small-caps;
+        font-weight: 500;
+        text-shadow:
+            -.5px .5px blue,
+            -1px .5px black,
+            -1.5px 1px blue;
+            
+        box-shadow: -1px 1px 0px 0px, -2px 2px 0px 0px, -3px 3px 0px 0px, -4px 4px 0px 0px blue;
+    }
+
+    #userDeclinesDisbandGame {
+        border: 3px solid blue;
+        border-radius: 5px;
+        color: black;
+        background: white;
+        font-family: optima;
+        font-size: 4.5vw;
+        position: absolute;
+        left: 40vw;
+        top: 37vw;
+        font-variant: small-caps;
+        font-weight: 500;
+        text-shadow:
+            -.5px .5px blue,
+            -1px .5px black,
+            -1.5px 1px blue;
+            
+        box-shadow: -1px 1px 0px 0px, -2px 2px 0px 0px, -3px 3px 0px 0px, -4px 4px 0px 0px blue;
+    }
+
+    #hostHasDisbanedGamePage {
+        display: none;
+        border: 3px solid blue;
+        border-radius: 5px;
+        position: absolute;
+        width: 300px;
+        height: 200px;
+        position: absolute;
+        top: 40vw;
+        left: 12vw;
+        background: white;
+        text-align: center;
+        box-shadow: -1px 1px 0px 0px, -2px 2px 0px 0px, -3px 3px 0px 0px, -4px 4px 0px 0px blue;
+    }
+
+    #hostHasDisbanedGameLabel {
+        font-size: 8vw;
+        font-family: optima;
+        position: absolute;
+        left: 0vw;
+        top: 5vw;
+        width: 300px;
+        border-bottom: 3px solid blue;
+        font-variant: small-caps;
+        text-shadow:
+            -.5px .5px blue,
+            -1px .5px black,
+            -1.5px 1px blue;
+    }
+
+    #okHostHasDisbandedGameButton {
+        border: 3px solid blue;
+        border-radius: 5px;
+        color: black;
+        background: white;
+        font-family: optima;
+        font-size: 4.5vw;
+        position: absolute;
+        left: 30vw;
+        top: 37vw;
+        font-variant: small-caps;
+        font-weight: 500;
+        text-shadow:
+            -.5px .5px blue,
+            -1px .5px black,
+            -1.5px 1px blue;
+            
+        box-shadow: -1px 1px 0px 0px, -2px 2px 0px 0px, -3px 3px 0px 0px, -4px 4px 0px 0px blue;
+    }
+
+    /* Profile Info Page Displays */
+    #profileInfoPage {
+        display: none;
+        position: absolute;
+        border: 3px solid blue;
+        border-radius: 5px;
+        left: 12vw;
+        top: 10vw;
+        width: 300px;
+        height: 600px;
+        /* height: 200px; */
+        text-align: center;
+        background-color: white;
+        box-shadow: -1px 1px 0px 0px, -2px 2px 0px 0px, -3px 3px 0px 0px, -4px 4px 0px 0px, -5px 5px 0px 0px blue;
+    }
+
+    #profileInfoPageBarrier1 {
+        width: 300px;
+        border: 3px solid blue;
+    }
+
+    #profileInfoPageBarrier2 {
+        position: absolute;
+        width: 300px;
+        border: 3px solid blue;
+        top: 60vw;
+    }
+
+    #profileInfoPageBarrier3 {
+        position: absolute;
+        top: 100vw;
+        width: 300px;
+        border: 3px solid blue;
+    }
+
+    #customizeChipsButton {
+        display: block;
+        position: absolute;
+        border: 3px solid blue;
+        border-radius: 5px;
+        top: 125vw;
+        width: 210px;
+        left: 13vw;
+        color: black;
+        background: white;
+        font-size: 4vw;
+        border-radius: 7px;
+        font-family: optima;
+        text-shadow:
+            -.5px .5px blue,
+            -1px .5px black,
+            -1.5px 1px blue;
+            
+        box-shadow: -1px 1px 0px 0px, -2px 2px 0px 0px, -3px 3px 0px 0px, -4px 4px 0px 0px blue;
+    }
+
+    #deleteAccountButton {
+        display: block;
+        position: absolute;
+        border: 3px solid blue;
+        border-radius: 5px;
+        top: 140vw;
+        left: 17vw;
+        color: black;
+        background: white;
+        font-size: 4vw;
+        border-radius: 7px;
+        font-family: optima;
+        text-shadow:
+            -.5px .5px blue,
+            -1px .5px black,
+            -1.5px 1px blue;
+            
+        box-shadow: -1px 1px 0px 0px, -2px 2px 0px 0px, -3px 3px 0px 0px, -4px 4px 0px 0px blue;
+    }
+
+    #xOutOfProfileInfoPage {
+        color: black;
+        background: white;
+        position: absolute;
+        font-size: 4vw;
+        border: 3px solid blue;
+        border-radius: 5px;
+        top: -1vw;
+        left: -1vw;
+        text-shadow:
+            -.5px .5px blue,
+            -1px .5px black,
+            -1.5px 1px blue;
+            
+        box-shadow: -1px 1px 0px 0px, -2px 2px 0px 0px, -3px 3px 0px 0px, -4px 4px 0px 0px blue;
+    }
+
+    #profileInfoPageLabel {
+        font-size: 10vw;
+        font-family: optima;
+        font-variant: small-caps;
+        text-shadow:
+            -.5px .5px blue,
+            -1px .5px black,
+            -1.5px 1px blue;
+
+    }
+
+    #editableRealName {
+        display: block;
+        text-align: center;
+        position: absolute;
+        width: 150px;
+        border: 3px solid blue;
+        border-radius: 5px;
+        font-size: 4.5vw;
+        left: 17vw;
+        top: 36vw;
+        color: black;
+        font-family: optima;
+        
+    }
+
+    #editRealNameButton {
+        display: block;
+        position: absolute;
+        border: 3px solid blue;
+        border-radius: 5px;
+        left: 32vw;
+        top: 50vw;
+        color: black;
+        background: white;
+        border-radius: 7px;
+        font-family: optima;
+        text-shadow:
+            -.5px .5px blue,
+            -1px .5px black,
+            -1.5px 1px blue;
+            
+        box-shadow: -1px 1px 0px 0px, -2px 2px 0px 0px, -3px 3px 0px 0px, -4px 4px 0px 0px blue;
+    }
+
+    #editablePreSetChipAmount {
+        display: block;
+        text-align: center;
+        position: absolute;
+        width: 150px;
+        border: 3px solid blue;
+        border-radius: 5px;
+        font-size: 4.5vw;
+        color: black;
+        left: 17vw;
+        top: 77vw;
+        font-family: optima;
+    }
+
+    #saveInputtedUserInfoButton {
+        display: block;
+        position: absolute;
+        border: 3px solid blue;
+        border-radius: 5px;
+        top: 110vw;
+        left: 29vw;
+        color: black;
+        background: white;
+        font-size: 4vw;
+        border-radius: 7px;
+        font-family: optima;
+        text-shadow:
+            -.5px .5px blue,
+            -1px .5px black,
+            -1.5px 1px blue;
+            
+        box-shadow: -1px 1px 0px 0px, -2px 2px 0px 0px, -3px 3px 0px 0px, -4px 4px 0px 0px blue;
+    }
+
+    #additionalUserPreSetChips {
+        display: block;
+        font-size: 8vw;
+        font-family: optima;
+        font-variant: small-caps;
+        text-shadow:
+            -.5px .5px blue,
+            -1px .5px black,
+            -1.5px 1px blue;
+        
+    }
+
+    #editPreSetChipsButton {
+        display: block;
+        position: absolute;
+        border: 3px solid blue;
+        border-radius: 5px;
+        left: 32vw;
+        top: 91vw;
+        color: black;
+        background: white;
+        border-radius: 7px;
+        font-family: optima;
+        text-shadow:
+            -.5px .5px blue,
+            -1px .5px black,
+            -1.5px 1px blue;
+            
+        box-shadow: -1px 1px 0px 0px, -2px 2px 0px 0px, -3px 3px 0px 0px, -4px 4px 0px 0px blue;
+    }
+
+    #additionalUserInfo input {
+
+        display: none;
+        border: 2px solid black;
+        font-size: .5em;
+        text-align: center;
+        width: 150px;
+    }
+
+
+    #additionalUserRealName {
+        display: block;
+        font-size: 6.5vw;
+        font-family: otpima;
+        font-variant: small-caps;
+        position: absolute;
+        left: 8vw;
+        top: 23vw;
+        text-shadow:
+            -.5px .5px blue,
+            -1px .5px black,
+            -1.5px 1px blue;
+    }
+
+    /* Customizing Chips Page Displays */
+    #customizeChipsCasePage {
+        display: none;
+        position: absolute;
+        border: 3px solid blue;
+        border-radius: 5px;
+        left: 12vw;
+        top: 10vw;
+        width: 300px;
+        height: 600px;
+        /* height: 200px; */
+        text-align: center;
+        background-color: white;
+        box-shadow: -1px 1px 0px 0px, -2px 2px 0px 0px, -3px 3px 0px 0px, -4px 4px 0px 0px, -5px 5px 0px 0px blue;
+    }
+
+    #chipPreviewImage {
+        width: 75px;
+        height: 75px;
+        border-radius: 50%;
+        background: black;
+        position: absolute;
+        left: 3vw;
+        top: 3vw;
+    }
+
+    #xOutOfCustomizeChipsPageButton {
+        color: black;
+        background: white;
+        position: absolute;
+        font-size: 4vw;
+        border: 3px solid blue;
+        border-radius: 5px;
+        top: -1vw;
+        left: -1vw;
+        text-shadow:
+            -.5px .5px blue,
+            -1px .5px black,
+            -1.5px 1px blue;
+            
+        box-shadow: -1px 1px 0px 0px, -2px 2px 0px 0px, -3px 3px 0px 0px, -4px 4px 0px 0px blue;
+    }
+
+    #customizeChipsCasePageLabel {
+        display: block;
+        font-size: 8vw;
+        font-family: optima;
+        border-bottom: 3px solid blue;
+        font-variant: small-caps;
+        text-shadow:
+            -.5px .5px blue,
+            -1px .5px black,
+            -1.5px 1px blue;
+    }
+
+    #fileInput {
+        display: block;
+        
+    }
+
+    #saveChipCustomizationButton {
+        display: block;
+        position: absolute;
+        border: 3px solid blue;
+        border-radius: 5px;
+        top: 125vw;
+        left: 28vw;
+        color: black;
+        background: white;
+        font-size: 6vw;
+        border-radius: 7px;
+        font-family: optima;
+        text-shadow:
+            -.5px .5px blue,
+            -1px .5px black,
+            -1.5px 1px blue;
+            
+        box-shadow: -1px 1px 0px 0px, -2px 2px 0px 0px, -3px 3px 0px 0px, -4px 4px 0px 0px blue;
+    }
+
+    #chipPreview {
+        background: red;
+        border-radius: 50%;
+        border: 2px dashed white;
+        height: 100px;
+        width: 100px;
+        position: absolute;
+        top: 70vw;
+        left: 23vw;
+        z-index: 1;
+    }
+
+    /* Confirmation To Delete Account Page Displays */
+    #confirmationToDeleteAccountPage {
+        display: none;
+        border: 3px solid blue;
+        border-radius: 5px;
+        position: absolute;
+        width: 300px;
+        height: 200px;
+        position: absolute;
+        top: 40vw;
+        left: 12vw;
+        background: white;
+        text-align: center;
+        box-shadow: -1px 1px 0px 0px, -2px 2px 0px 0px, -3px 3px 0px 0px, -4px 4px 0px 0px blue;
+    }
+
+    #deleteAccountConfirmationLabel {
+        font-size: 4.5vw;
+        font-family: optima;
+        position: absolute;
+        left: 0vw;
+        top: 5vw;
+        width: 300px;
+        border-bottom: 3px solid blue;
+        font-variant: small-caps;
+        text-shadow:
+            -.5px .5px blue,
+            -1px .5px black,
+            -1.5px 1px blue;
+    }
+
+    #userConfirmsDeleteAccount {
+        border: 3px solid blue;
+        border-radius: 5px;
+        color: black;
+        background: white;
+        font-family: optima;
+        font-size: 4.5vw;
+        position: absolute;
+        left: 18vw;
+        top: 37vw;
+        font-variant: small-caps;
+        font-weight: 500;
+        text-shadow:
+            -.5px .5px blue,
+            -1px .5px black,
+            -1.5px 1px blue;
+            
+        box-shadow: -1px 1px 0px 0px, -2px 2px 0px 0px, -3px 3px 0px 0px, -4px 4px 0px 0px blue;
+    }
+
+    #userDeclinesDeleteAccount {
+        border: 3px solid blue;
+        border-radius: 5px;
+        color: black;
+        background: white;
+        font-family: optima;
+        font-size: 4.5vw;
+        position: absolute;
+        left: 40vw;
+        top: 37vw;
+        font-variant: small-caps;
+        font-weight: 500;
+        text-shadow:
+            -.5px .5px blue,
+            -1px .5px black,
+            -1.5px 1px blue;
+            
+        box-shadow: -1px 1px 0px 0px, -2px 2px 0px 0px, -3px 3px 0px 0px, -4px 4px 0px 0px blue;
+    }
+
+    /* Change Room Size Mid Game Displays */
+    #confirmationChangeRoomSizePage {
+        display: none;
+        border: 3px solid blue;
+        border-radius: 5px;
+        position: absolute;
+        width: 300px;
+        height: 200px;
+        position: absolute;
+        top: 40vw;
+        left: 12vw;
+        background: white;
+        text-align: center;
+        box-shadow: -1px 1px 0px 0px, -2px 2px 0px 0px, -3px 3px 0px 0px, -4px 4px 0px 0px blue;
+    }
+
+    #confirmationChangeRoomSizeLabel {
+        font-size: 6vw;
+        font-family: optima;
+        position: absolute;
+        left: 0vw;
+        top: 5vw;
+        width: 300px;
+        border-bottom: 3px solid blue;
+        font-variant: small-caps;
+        text-shadow:
+            -.5px .5px blue,
+            -1px .5px black,
+            -1.5px 1px blue;
+    }
+
+    #confirmRoomSizeChange {
+        border: 3px solid blue;
+        border-radius: 5px;
+        color: black;
+        background: white;
+        font-family: optima;
+        font-size: 4.5vw;
+        position: absolute;
+        left: 18vw;
+        top: 37vw;
+        font-variant: small-caps;
+        font-weight: 500;
+        text-shadow:
+            -.5px .5px blue,
+            -1px .5px black,
+            -1.5px 1px blue;
+            
+        box-shadow: -1px 1px 0px 0px, -2px 2px 0px 0px, -3px 3px 0px 0px, -4px 4px 0px 0px blue;
+    }
+
+    #declineRoomSizeChange {
+        border: 3px solid blue;
+        border-radius: 5px;
+        color: black;
+        background: white;
+        font-family: optima;
+        font-size: 4.5vw;
+        position: absolute;
+        left: 40vw;
+        top: 37vw;
+        font-variant: small-caps;
+        font-weight: 500;
+        text-shadow:
+            -.5px .5px blue,
+            -1px .5px black,
+            -1.5px 1px blue;
+            
+        box-shadow: -1px 1px 0px 0px, -2px 2px 0px 0px, -3px 3px 0px 0px, -4px 4px 0px 0px blue;
+    }
+
+    #waitForRoundToEnd2ChangeRoomSizePage {
+        display: none;
+        border: 3px solid blue;
+        border-radius: 5px;
+        position: absolute;
+        width: 300px;
+        height: 200px;
+        position: absolute;
+        top: 40vw;
+        left: 12vw;
+        background: white;
+        text-align: center;
+        box-shadow: -1px 1px 0px 0px, -2px 2px 0px 0px, -3px 3px 0px 0px, -4px 4px 0px 0px blue;
+    }
+
+    #waitForRoundToEnd2ChangeRoomSizeLabel {
+        font-size: 7vw;
+        font-family: optima;
+        position: absolute;
+        left: 0vw;
+        top: 5vw;
+        width: 300px;
+        border-bottom: 3px solid blue;
+        font-variant: small-caps;
+        text-shadow:
+            -.5px .5px blue,
+            -1px .5px black,
+            -1.5px 1px blue;
+    }
+
+    #okWaitForRoundToEnd2ChangeRoomSize {
+        border: 3px solid blue;
+        border-radius: 5px;
+        color: black;
+        background: white;
+        font-family: optima;
+        font-size: 4.5vw;
+        position: absolute;
+        left: 30vw;
+        top: 37vw;
+        font-variant: small-caps;
+        font-weight: 500;
+        text-shadow:
+            -.5px .5px blue,
+            -1px .5px black,
+            -1.5px 1px blue;
+            
+        box-shadow: -1px 1px 0px 0px, -2px 2px 0px 0px, -3px 3px 0px 0px, -4px 4px 0px 0px blue;
+    }
+
+    #midGameRoomSizeChangePage {
+        display: none;
+        width: 391px;
+        height: 250px;
+        top: 30vw;
+        left: -1vw;
+        text-align: center;
+        background: white;
+        position: absolute;
+        border: 3px solid blue;
+        border-radius: 5px;
+        box-shadow: -1px 1px 0px 0px, -2px 2px 0px 0px, -3px 3px 0px 0px, -4px 4px 0px 0px, -5px 5px 0px 0px blue;
+    }
+
+    #midGameRoomSizeChangeLabel {
+        position: absolute;
+        text-align: center;
+        font-size: 8vw;
+        width: 98.5%;
+        left: 0vw;
+        top: 0vw;
+        font-family: 'georgia', Arial, Helvetica, sans-serif;
+        font-variant: small-caps;
+        font-weight: 500;
+        background-color: #fff;
+        border: 3px solid blue;
+        border-radius: 5px;
+        text-shadow:
+            -.5px .5px blue,
+            -1px .5px black,
+            -1.5px 1px blue,
+            -2px 1px black,
+            -2.5px 1.5px black,
+            -3px 1.5px black,
+            -3.5px 2px black;
+
+    }
+
+    #midGameRoomSizeSelect  {
+        position: absolute;
+        width: 98.5%;
+        top: 10vw;
+        font-size: 6vw;
+        text-align: left;
+        color: black;
+        left: 0vw;
+        font-family: optima;
+        border: 3px solid blue;
+        background-color: #fff;
+        /* box-shadow: -1px 1px 0px 0px, -2px 2px 0px 0px, -3px 3px 0px 0px, -4px 4px 0px 0px, -5px 5px 0px 0px blue; */
+        
+    }
+
+    #midGameRoomSizeSelect input[type=radio] {
+        top: 60vw;
+        left: -30vw;
+        border: 2px solid black;
+        margin: 25px;
+        font-family: optima;
+    }
+
+    #cancelMidGameRoomSize {
+        position: absolute;
+        text-align: center;
+        font-size: 4vw;
+        border: 3px solid blue;
+        font-weight: 500;
+        border-radius: 5px;
+        top: 53vw;
+        color: black;
+        left: 20.416vw;
+        font-family: 'georgia', Arial, Helvetica, sans-serif;
+        font-variant: small-caps;
+        background: white;
+        text-shadow:
+            -.5px .5px blue,
+            -1px .5px black,
+            -1.5px 1px blue;
+        box-shadow: -1px 1px 0px 0px, -2px 2px 0px 0px, -3px 3px 0px 0px, -4px 4px 0px 0px, -5px 5px 0px 0px blue;
+    }
+
+    #midGameRoomSizeChangeSubmit {
+        position: absolute;
+        width: 35vw;
+        height: 13vw;
+        text-align: center;
+        font-size: 6vw;
+        border: 3px solid blue;
+        font-weight: 500;
+        border-radius: 5px;
+        top: 50vw;
+        color: black;
+        left: 40.416vw;
+        font-family: 'georgia', Arial, Helvetica, sans-serif;
+        font-variant: small-caps;
+        background: white;
+        text-shadow:
+            -.5px .5px blue,
+            -1px .5px black,
+            -1.5px 1px blue;
+        box-shadow: -1px 1px 0px 0px, -2px 2px 0px 0px, -3px 3px 0px 0px, -4px 4px 0px 0px, -5px 5px 0px 0px blue;
+    }
+
+    /* Reconnection Confirmation Displays */
+    #confirmationReconnectionPage {
+        display: none;
+        border: 3px solid blue;
+        border-radius: 5px;
+        position: absolute;
+        width: 300px;
+        height: 200px;
+        position: absolute;
+        top: 40vw;
+        left: 12vw;
+        background: white;
+        text-align: center;
+        box-shadow: -1px 1px 0px 0px, -2px 2px 0px 0px, -3px 3px 0px 0px, -4px 4px 0px 0px blue;
+    }
+
+    #confirmationReconnectionLabel {
+        font-size: 5vw;
+        font-family: optima;
+        position: absolute;
+        left: 0vw;
+        top: 5vw;
+        width: 300px;
+        border-bottom: 3px solid blue;
+        font-variant: small-caps;
+        text-shadow:
+            -.5px .5px blue,
+            -1px .5px black,
+            -1.5px 1px blue;
+    }
+
+    #userConfirmsReconnectionMessage {
+        border: 3px solid blue;
+        border-radius: 5px;
+        color: black;
+        background: white;
+        font-family: optima;
+        font-size: 4.5vw;
+        position: absolute;
+        left: 18vw;
+        top: 37vw;
+        font-variant: small-caps;
+        font-weight: 500;
+        text-shadow:
+            -.5px .5px blue,
+            -1px .5px black,
+            -1.5px 1px blue;
+            
+        box-shadow: -1px 1px 0px 0px, -2px 2px 0px 0px, -3px 3px 0px 0px, -4px 4px 0px 0px blue;
+    }
+
+    #userDeclinesReconnectionMessage {
+        border: 3px solid blue;
+        border-radius: 5px;
+        color: black;
+        background: white;
+        font-family: optima;
+        font-size: 4.5vw;
+        position: absolute;
+        left: 40vw;
+        top: 37vw;
+        font-variant: small-caps;
+        font-weight: 500;
+        text-shadow:
+            -.5px .5px blue,
+            -1px .5px black,
+            -1.5px 1px blue;
+            
+        box-shadow: -1px 1px 0px 0px, -2px 2px 0px 0px, -3px 3px 0px 0px, -4px 4px 0px 0px blue;
+    }
+
+    /* Testing Area For Displays */
+    #divForCardImgP1 {
+        display: none;
+        position: absolute;
+        border: 3px solid black;
+        border-radius: 5px;
+        width: 35px;
+        height: 50px;
+        /* left: 315px;
+        top: 549px; */
+    }
+
+    #divForPlacementCardImgP1, #divForPlacementCardImgP2, #divForPlacementCardImgP3, #divForPlacementCardImgP4, #divForPlacementCardImgP5, #divForPlacementCardImgP6 {
+        display: none;
+        position: absolute;
+        border: 3px solid black;
+        border-radius: 5px;
+        width: 20px;
+        height: 30px;
+        /* left: 255px;
+        top: 569px; */
+    }
+
+    /* #divForPlacementCardImgP1 {
+        display: block;
+        position: absolute;
+        border: 3px solid black;
+        border-radius: 5px;
+        width: 20px;
+        height: 30px;
+        left: 255px;
+        top: 569px;
+    } */
+
+    #testFoldButton {
+        display: none;
+        position: absolute;
+        top: 80vw;
+        left: 40vw;
+        border: 3px solid blue;
+        border-radius: 5px;
+
+    }
+
+    #xOutOfChipsCaseP1 {
+        display: none;
+        position: absolute;
+        left: 13vw;
+        top: 157vw;
+        color: black;
+        background: white;
+        font-size: 2vw;
+        border: 3px solid blue;
+        border-radius: 5px;
+        text-shadow:
+            -.5px .5px blue,
+            -1px .5px black,
+            -1.5px 1px blue;
+            
+        box-shadow: -1px 1px 0px 0px, -2px 2px 0px 0px, -3px 3px 0px 0px, -4px 4px 0px 0px blue;
+    }
+
+    /* #inGameBorderP1 {
+        display: block;
+        position: absolute;
+        font-size: 1.4em;
+        font-family: optima;
+        font-weight: 600;
+        text-align: center;
+        word-spacing: 100px;
+        width: 100px;
+        border: 4px solid black;
+        border-radius: 4px;
+        background: white;
+        color: black;
+        top: 135vw;
+        left: 36.5vw;
+        height: 14.359vw;
+    }
+
+    #inGameBorderP2 {
+        display: block;
+        position: absolute;
+        font-size: 1.4em;
+        font-family: optima;
+        font-weight: 600;
+        text-align: center;
+        word-spacing: 100px;
+        width: 100px;
+        border: 4px solid black;
+        border-radius: 4px;
+        background: white;
+        color: black;
+        top: 98vw;
+        left: 68vw;
+    }
+
+    #inGameBorderP3 {
+        display: block;
+        position: absolute;
+        font-size: 1.4em;
+        font-family: optima;
+        font-weight: 600;
+        text-align: center;
+        word-spacing: 100px;
+        width: 100px;
+        border: 4px solid black;
+        border-radius: 4px;
+        background: white;
+        color: black;
+        top: 55vw;
+        left: 5vw;
+    }
+
+    #inGameBorderP4 {
+        display: block;
+        position: absolute;
+        font-size: 1.4em;
+        font-family: optima;
+        font-weight: 600;
+        text-align: center;
+        word-spacing: 100px;
+        width: 100px;
+        border: 4px solid black;
+        border-radius: 4px;
+        background: white;
+        color: black;
+        top: 24vw;
+        left: 36.5vw;
+    }
+
+    #inGameBorderP5 {
+        display: block;
+        position: absolute;
+        font-size: 1.4em;
+        font-family: optima;
+        font-weight: 600;
+        text-align: center;
+        word-spacing: 100px;
+        width: 100px;
+        border: 4px solid black;
+        border-radius: 4px;
+        background: white;
+        color: black;
+        top: 55vw;
+        left: 68vw;
+    }
+
+    #inGameBorderP6 {
+        display: block;
+        position: absolute;
+        font-size: 1.4em;
+        font-family: optima;
+        font-weight: 600;
+        text-align: center;
+        word-spacing: 100px;
+        width: 100px;
+        border: 4px solid black;
+        border-radius: 4px;
+        background: white;
+        color: black;
+        top: 98vw;
+        left: 5vw;
+    } */
+
+}
+
+</style>
+
+<script src="/socket.io/socket.io.js"></script>
+<script src="creatingJoiningGameScript.js"></script>
+<script src="settingUpGameRoomScript.js"></script>
+<script src="inGameScript.js"></script>
+<script src="inGameScript2.js"></script>
+<script src="InGameLogicObjects.js"></script>
+<script src="InGameDisplaysScript.js"></script>
+<script src="transitionToNextRound.js"></script>
+<script src="logInAndCreateAccountScript.js"></script>
+<script src="groupsScript.js"></script>
+<script src="friendsScript.js"></script>
+<script src="alertsScript.js"></script>
+<script src="invitingPlayersToGameScript.js"></script>
+<script src="changingRoomSizeScript.js"></script>
+<script src="reconnectionScript.js"></script>
+<!-- <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyClOCIPevg3OyJvFPJo-tTyp2JNhr2Xx0g"></script> -->
+
+<script>
+
+// MAIN STUFF //
+
+function makeId(length) {
+    var result = '';
+    var characters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
+    var charactersLength = characters.length;
+    for (var i = 0; i < length; i++) {
+        result += characters.charAt(Math.floor(Math.random() * charactersLength));
+    }
+    return result;
+}
+
+var socket = io({
+    auth: {
+        token: makeId(31)
+    }
+});
+
+io.connect( "/", {
+    'reconnection': true,
+    'reconnectionDelay': 10000,
+    'reconnectionDelayMax': 10000
+} );
+
+let user = {};
+
+socket.on('userConnects', (sentIdFromBE) => {
+    user.loggedIn = false;
+    user.howUserGot2ViewPage = null;
+    user.userNameHolder = null;
+    user.userCurrentlyInGame = false;
+    user.sId = sentIdFromBE;
+    user.currentPage = 'u_a_homepage';
+    user.idleIndicator = false;
+    user.idleCount = 1;
+    // console.log(socket);
+})
+
+socket.on('grabbingAuth', () => {
+    socket.emit('sendingAuth', socket.id);
+})
+
+////////////////////////////////////////////////////////
+
+/// DECLARING VARIABLES THAT ARE USED IN DIFFERENT FILES ///
+
+// const user = {
+//     loggedIn: false,
+//     howUserGot2ViewPage: null,
+//     userNameHolder: null,
+//     userCurrentlyInGame: false, 
+//     sId: null,
+//     currentPage: 'u_a_homepage',
+// };
+const player = {
+    setButtons: ''
+};
+// const gameObj = {};
+let gameObj = {};
+const playerUserInfo = {};
+var p;
+
+class inGamePlayerSetters {
+    constructor(name, chips) {
+        this.name = name;
+        this.chips = chips;
+        this.totalBuyIn = chips;
+    }
+}
+
+////////////////////////////////////////////////////////
+
+// EVENT LISTENERS //
+
+// genral EVENT LISTENERS
+
+roomSizeSubmitButton.addEventListener('click', userSetsGameSize);
+
+createGameButton.addEventListener('click', userClicksCreateGameButton);
+
+joinGameButton.addEventListener('click', userClicksJoinGameButton);
+
+userSubmitsGameCodeButton.addEventListener('click', userEntersGameCode);
+
+gameSizeSubmitButton.addEventListener('click', userSetsGameSize);
+
+userCreatingGameSubmitsIGInfoButton.addEventListener('click', userCreatingGameSubmitsInGameDisplayInfo);
+
+userJoiningSubmitsInGameInfoButton.addEventListener('click', userJoiningSubmitsIGDisplayInfo);
+
+startGameButton.addEventListener('click', hostInitiatesPreGameSettingsPage);
+
+hostSetsPreGameSettingsAndStartsGameButton.addEventListener('click', hostSubmitsUserInfoGameStarts);
+
+hostSubmitsWinnerOfRoundButton.addEventListener('click', hostSubmitsWinnerOfRound);
+
+startNextRoundButton.addEventListener('click', hostStartsNextRound);
+
+inGameMenuButton.addEventListener('click', displayingInGameMenu);
+
+xOutOfInGameMenu.addEventListener('click', userXsOutOfInGameMenu);
+
+xOutOfReBuyPage.addEventListener('click', userXsOutOfReBuyPage);
+
+playerReBuySubmit.addEventListener('click', playerSubmitsReBuy);
+
+homeButton.addEventListener('click', userInitiatesReturnHomeProcess);
+
+userConfirmsDisbandGame.addEventListener('click', userConfirmsDisbandGameMessage);
+
+userConfirmsLeaveGame.addEventListener('click', userConfirmsLeaveGameMessage);
+
+userDeclinesDisbandGame.addEventListener('click', userDeclinesDisbandGameMessage);
+
+userDeclinesLeaveGame.addEventListener('click', userDeclinesLeaveGameMessage);
+
+okHostHasDisbandedGameButton.addEventListener('click', closingHostHasDisbandedGameMessage);
+
+/// Login + Create Account Event Listeners ///
+
+viewUserInfoPageButton.addEventListener('click', userClicksUserInfoButton);
+
+userSubmitsLogInInfoButton.addEventListener('click', userSubmitsLogInInfo);
+
+xOutOfUserInfoPageButton.addEventListener('click', userXsOutOFUserInfoPage);
+
+createAccountButton.addEventListener('click', userClicksOnCreateAccountButton);
+
+userSubmitsCreatingOfAccountButton.addEventListener('click', userSubmitsCreationOfAccount);
+
+xOutOfCreatingAccountPage.addEventListener('click', userXsOutOfCreateAccountPage);
+
+logInButton.addEventListener('click', userClicksOnLogInButton);
+
+xOutOfLogInPage.addEventListener('click', userXsOutOfLogInPage);
+
+signOutButton.addEventListener('click', userInitiatesLogOut);
+
+yesLogOutConfirmationButton.addEventListener('click', userConfirmsLogOut);
+
+noLogOutConfirmationButton.addEventListener('click', userAbortsLogOut);
+
+/// Viewing Friends + Adding Friends Event Listeners /// 
+
+viewFriendsButton.addEventListener('click', userViewsFriendsPage);
+
+addMoreFriendsButton.addEventListener('click', userClicksAddFriendButton);
+
+sendingFriendRequestButton.addEventListener('click', userSendsFriendRequest);
+
+xOutOfAddingFriendPage.addEventListener('click', userXsOutOfAddingFriendsPage);
+
+xOutOfFriendsPage.addEventListener('click', userXsOutOfFriendsPage);
+
+/// Alerts Page Event Listeners /// 
+
+viewAlertsButton.addEventListener('click', userViewsAlertsPage);
+
+xOutOfAlertsPageBttn.addEventListener('click', userXsOutOfAlertsPage);
+
+/// Groups Page Event Listeners /// 
+
+viewGroupsButton.addEventListener('click', userViewsGroupPage);
+
+xOutOfGroupsPage.addEventListener('click', userXsOutOfGroupPage);
+
+createNewGroupButton.addEventListener('click', userInitiatesCreatingNewGroup);
+
+xOutOfCreatingNewGroup.addEventListener('click', userXsOutOfCreatingGroupPage);
+
+userSubmitsNewlyCreatedGroup.addEventListener('click', userSubmitsNewGroupInfo);
+
+xOutOfvtcg.addEventListener('click', userXsOutOfSpecificGroupInfoPage);
+
+vtcgInvFriends2GroupButton.addEventListener('click', initiatingInvitingUserToGroup);
+
+invitingUserToGroupSubmit.addEventListener('click', userSubmitsGroupInvite);
+
+xOutOfInvUser2Group.addEventListener('click', userXsOutOfInvitingUserToGroupPage);
+
+/// Inviting Players To Game Event Listeners /// 
+
+userSubmitsInviteButton.addEventListener('click', userSubmitsGameInvite);
+
+xOutOfInvitingUserToGamePage.addEventListener('click', userXsOutOfInvitePlayerToGamePage);
+
+/// Profile Info Page Event Listeners /// 
+
+viewProfileInfoButton.addEventListener('click', userClicksOnProfileInfoButton);
+
+xOutOfProfileInfoPage.addEventListener('click', userXsOutOfProfileInfoPage);
+
+editRealNameButton.addEventListener('click', userEditsDefaultName);
+
+editPreSetChipsButton.addEventListener('click', userEditsDefaultChipAmount);
+
+saveInputtedUserInfoButton.addEventListener('click', userSavesInputtedProfileInfoData);
+
+deleteAccountButton.addEventListener('click', userInitiatesDeleteAccountProcess);
+
+userConfirmsDeleteAccount.addEventListener('click', userConfirmsDeleteAccountMessage);
+
+userDeclinesDeleteAccount.addEventListener('click', userDeclinesDeleteAccountMessage);
+
+/// Change Room Size Page Event Listeners ///
+
+changingRoomSizeMidGameButton.addEventListener('click', displayChangeRoomSizePage);
+
+confirmRoomSizeChange.addEventListener('click', displayNewRoomSizeOptionPage);
+
+okWaitForRoundToEnd2ChangeRoomSize.addEventListener('click', userConfirmsThatRoundMustBeOver2ChangeRoomSize);
+
+cancelMidGameRoomSize.addEventListener('click', userXsOutOfNewRoomSizeOptionPage);
+
+midGameRoomSizeChangeSubmit.addEventListener('click', hostSubmitsNewRoomSizeMidGame);
+
+declineRoomSizeChange.addEventListener('click', userXsOutOfChangeRoomSizePage);
+
+/// Reconnection Listeners ///
+
+userConfirmsReconnectionMessage.addEventListener('click', userConfirmsReconnectSignalPreGameLobby);
+
+userDeclinesReconnectionMessage.addEventListener('click', userDeclinesReconnectSignalPreGameLobby);
+
+/// Customizing Chips Page Listeners ///
+
+customizeChipsButton.addEventListener('click', displayCustomizeChipsPage);
+
+xOutOfCustomizeChipsPageButton.addEventListener('click', closeCustomizeChipsPage);
+
+saveChipCustomizationButton.addEventListener('click', userSavesChipCustomization);
+
+////////// PLAYER EVENT LISTENERS //////////
+
+// p1 event listeners //
+
+p1CheckButton.addEventListener('click', playerOne.checks);
+// p1CheckButton.addEventListener('dblclick', playerOne.checks);
+
+p1CallButton.addEventListener('click', playerOne.calls);
+
+p1BetButton.addEventListener('click', playerOne.betsEMITTER);
+
+p1BetSubmitButton.addEventListener('click', playerOne.submitsBet);
+
+p1RaiseSubmitButton.addEventListener('click', playerOne.submitsRaise);
+
+p1FoldButton.addEventListener('click', playerOne.folds);
+
+xOutOfChipsCaseP1.addEventListener('click', playerOne.hideCaseOfChips);
+
+// p2 event listeners //
+
+p2CheckButton.addEventListener('click', playerTwo.checks);
+
+p2CallButton.addEventListener('click', playerTwo.calls);
+
+p2BetButton.addEventListener('click', playerTwo.betsEMITTER);
+
+p2BetSubmitButton.addEventListener('click', playerTwo.submitsBet);
+
+p2RaiseSubmitButton.addEventListener('click', playerTwo.submitsRaise);
+
+p2FoldButton.addEventListener('click', playerTwo.folds);
+
+// p3 event listeners //
+
+p3CheckButton.addEventListener('click', playerThree.checks);
+
+p3CallButton.addEventListener('click', playerThree.calls);
+
+p3BetButton.addEventListener('click', playerThree.betsEMITTER);
+
+p3BetSubmitButton.addEventListener('click', playerThree.submitsBet);
+
+p3RaiseSubmitButton.addEventListener('click', playerThree.submitsRaise);
+
+p3FoldButton.addEventListener('click', playerThree.folds);
+
+// p4 event listeners //
+
+p4CheckButton.addEventListener('click', playerFour.checks);
+
+p4CallButton.addEventListener('click', playerFour.calls);
+
+p4BetButton.addEventListener('click', playerFour.betsEMITTER);
+
+p4BetSubmitButton.addEventListener('click', playerFour.submitsBet);
+
+p4RaiseSubmitButton.addEventListener('click', playerFour.submitsRaise);
+
+p4FoldButton.addEventListener('click', playerFour.folds);
+
+// p5 event listeners //
+
+p5CheckButton.addEventListener('click', playerFive.checks);
+
+p5CallButton.addEventListener('click', playerFive.calls);
+
+p5BetButton.addEventListener('click', playerFive.betsEMITTER);
+
+p5BetSubmitButton.addEventListener('click', playerFive.submitsBet);
+
+p5RaiseSubmitButton.addEventListener('click', playerFive.submitsRaise);
+
+p5FoldButton.addEventListener('click', playerFive.folds);
+
+// p6 event listeners //
+
+p6CheckButton.addEventListener('click', playerSix.checks);
+
+p6CallButton.addEventListener('click', playerSix.calls);
+
+p6BetButton.addEventListener('click', playerSix.betsEMITTER);
+
+p6BetSubmitButton.addEventListener('click', playerSix.submitsBet);
+
+p6RaiseSubmitButton.addEventListener('click', playerSix.submitsRaise);
+
+p6FoldButton.addEventListener('click', playerSix.folds);
+
+// p7 event listeners //
+
+p7CheckButton.addEventListener('click', playerSeven.checks);
+
+p7CallButton.addEventListener('click', playerSeven.calls);
+
+p7BetButton.addEventListener('click', playerSeven.betsEMITTER);
+
+p7BetSubmitButton.addEventListener('click', playerSeven.submitsBet);
+
+p7RaiseSubmitButton.addEventListener('click', playerSeven.submitsRaise);
+
+p7FoldButton.addEventListener('click', playerSeven.folds);
+
+// p8 event listeners //
+
+p8CheckButton.addEventListener('click', playerEight.checks);
+
+p8CallButton.addEventListener('click', playerEight.calls);
+
+p8BetButton.addEventListener('click', playerEight.betsEMITTER);
+
+p8BetSubmitButton.addEventListener('click', playerEight.submitsBet);
+
+p8RaiseSubmitButton.addEventListener('click', playerEight.submitsRaise);
+
+p8FoldButton.addEventListener('click', playerEight.folds);
+
+// p9 event listeners //
+
+p9CheckButton.addEventListener('click', playerNine.checks);
+
+p9CallButton.addEventListener('click', playerNine.calls);
+
+p9BetButton.addEventListener('click', playerNine.betsEMITTER);
+
+p9BetSubmitButton.addEventListener('click', playerNine.submitsBet);
+
+p9RaiseSubmitButton.addEventListener('click', playerNine.submitsRaise);
+
+p9FoldButton.addEventListener('click', playerNine.folds);
+
+////////////////////////////////////////////////////////
+
+// SOCKET ONs //
+
+// ganeral game ONs //
+
+socket.on('sendingUserSID', settingUsersSocketId);
+
+socket.on('userIsClearedToJoinGame', displayingUserJoiningIGDisplayInfoPageAfterClearance);
+
+socket.on('joiningNewGameState', settingGameLobbyState);
+
+socket.on('hostHasStartedTheGame', finalizingGameEnvironment);
+
+socket.on('sendingBackInfo4BB', displayingPInfoAfterBlindsBB);
+
+socket.on('sendingBackInfo4SB', displayingPInfoAfterBlindsSB);
+
+socket.on('sendingBackWinnerOfRound', receivingWinnerOfRound);
+
+socket.on('sendingWinner4Room', updatingDisplayAfterWin);
+
+socket.on('sendingHostNextRoundPage', displayNextRoundPage);
+
+socket.on('sendingBackConfirmation4NextRound', displayingNextRound2Room);
+
+socket.on('sendingGameCodeForInGameMenu', displayingGameCodeForInGameMenu);
+
+socket.on('sendingUserDisconnectToRoom', handlingUserLeavingMidGame);
+
+socket.on('grabbingGameStateForUserJoiningMidGame', receivingRequestForGameState);
+
+socket.on('initializingGameStateForUserJoiningMidGame', equalizingGameStateForPlayerJoiningMidGame);
+
+socket.on('sendingUserRequestForReBuy', updatingDisplayAfterReBuy);
+
+socket.on('sendingDisbandGameToRoom', receivingDisbandOfGame);
+
+socket.on('userSetNullRoomSize', displayingUserSetInvalidRoomSize);
+
+socket.on('userSetsValidRoomSize', sendingUser2NextPageAfterConfirmingValidRoomSize);
+
+/// Login/Create Account ONs ///
+
+socket.on('sendingBackUserLogInRequest', receivingUserLogInRequest);
+
+socket.on('sendingBackUserLogOutRequest', recevingUserLogOutRequest);
+
+socket.on('accountCreationWasCleared', userAccountWasCleared);
+
+socket.on('userHasEnteredInCorrectInformation', showingUserMessageFailureToLogin);
+
+socket.on('userCreatedAccountWithInvalidCredentials', showingUserMessageInvalidCredentials);
+
+socket.on('sendingBackUserRequestToDeleteAccount', receivingUserRequestToDeleteAccount);
+
+/// Friends Functionality ONs ///
+
+socket.on('friendRequestWasSentToUser', friendRequestWasCleared);
+
+socket.on('userAcceptedSentFreindRequest', addingToFriendPageAfterAcceptedFRiendRQ);
+
+/// Alerts Functionality ONs ///
+
+socket.on('sendingFriendRequestToReceiver', handlingFriendRequest4Receiver);
+
+socket.on('sendingGroupInviteToReceiver', handlingGroupRequest4Receiver);
+
+socket.on('noPendingAlertsATM', displayingNoAlertsToUser);
+
+/// Groups Functionality ONs ///
+
+socket.on('newGroupWasCleared', addingNewGroup2GroupPage);
+
+socket.on('sendingGroupInfo4User2View', handlingUserRequest2ViewSpecificGroup);
+
+socket.on('groupInviteWasCleared', receivingClearanceForGroupInvite);
+
+/// Inviting Players To Game Functionality ONs ///
+
+socket.on('gameInviteWasCleared', receivingClearanceForGameInvite);
+
+socket.on('sendingGameInviteToReceiver', handlingGameInviteForReceiver);
+
+/// Player In Game ONs ///
+
+// p1 ONs //
+
+socket.on('sendingBackP1Check', playerOne.displayCheck2Room);
+
+socket.on('sendingBackP1Call', playerOne.displayCall2Room);
+
+socket.on('sendingBackP1AnteCall', playerOne.displayAnteCall2Room);
+
+socket.on('sendingBackP1Bet', playerOne.displayBet2Room);
+
+socket.on('sendingBackP1Fold', playerOne.displayFold2Room);
+
+// p2 ONs //
+
+socket.on('sendingBackP2Check', playerTwo.displayCheck2Room);
+
+socket.on('sendingBackP2Call', playerTwo.displayCall2Room);
+
+socket.on('sendingBackP2AnteCall', playerTwo.displayAnteCall2Room);
+
+socket.on('sendingBackP2Bet', playerTwo.displayBet2Room);
+
+socket.on('sendingBackP2Fold', playerTwo.displayFold2Room);
+
+// p3 ONs //
+
+socket.on('sendingBackP3Check', playerThree.displayCheck2Room);
+
+socket.on('sendingBackP3Call', playerThree.displayCall2Room);
+
+socket.on('sendingBackP3AnteCall', playerThree.displayAnteCall2Room);
+
+socket.on('sendingBackP3Bet', playerThree.displayBet2Room);
+
+socket.on('sendingBackP3Fold', playerThree.displayFold2Room);
+
+// p4 ONs //
+
+socket.on('sendingBackP4Check', playerFour.displayCheck2Room);
+
+socket.on('sendingBackP4Call', playerFour.displayCall2Room);
+
+socket.on('sendingBackP4AnteCall', playerFour.displayAnteCall2Room);
+
+socket.on('sendingBackP4Bet', playerFour.displayBet2Room);
+
+socket.on('sendingBackP4Fold', playerFour.displayFold2Room);
+
+// p5 ONs //
+
+socket.on('sendingBackP5Check', playerFive.displayCheck2Room);
+
+socket.on('sendingBackP5Call', playerFive.displayCall2Room);
+
+socket.on('sendingBackP5AnteCall', playerFive.displayAnteCall2Room);
+
+socket.on('sendingBackP5Bet', playerFive.displayBet2Room);
+
+socket.on('sendingBackP5Fold', playerFive.displayFold2Room);
+
+// p6 ONs //
+
+socket.on('sendingBackP6Check', playerSix.displayCheck2Room);
+
+socket.on('sendingBackP6Call', playerSix.displayCall2Room);
+
+socket.on('sendingBackP6AnteCall', playerSix.displayAnteCall2Room);
+
+socket.on('sendingBackP6Bet', playerSix.displayBet2Room);
+
+socket.on('sendingBackP6Fold', playerSix.displayFold2Room);
+
+// p7 ONs //
+
+socket.on('sendingBackP7Check', playerSeven.displayCheck2Room);
+
+socket.on('sendingBackP7Call', playerSeven.displayCall2Room);
+
+socket.on('sendingBackP7AnteCall', playerSeven.displayAnteCall2Room);
+
+socket.on('sendingBackP7Bet', playerSeven.displayBet2Room);
+
+socket.on('sendingBackP7Fold', playerSeven.displayFold2Room);
+
+// p8 ONs //
+
+socket.on('sendingBackP8Check', playerEight.displayCheck2Room);
+
+socket.on('sendingBackP8Call', playerEight.displayCall2Room);
+
+socket.on('sendingBackP8AnteCall', playerEight.displayAnteCall2Room);
+
+socket.on('sendingBackP8Bet', playerEight.displayBet2Room);
+
+socket.on('sendingBackP8Fold', playerEight.displayFold2Room);
+
+// p9 ONs //
+
+socket.on('sendingBackP9Check', playerNine.displayCheck2Room);
+
+socket.on('sendingBackP9Call', playerNine.displayCall2Room);
+
+socket.on('sendingBackP9AnteCall', playerNine.displayAnteCall2Room);
+
+socket.on('sendingBackP9Bet', playerNine.displayBet2Room);
+
+socket.on('sendingBackP9Fold', playerNine.displayFold2Room);
+
+/// Host Changing Room Size Mid Game ONs ///
+socket.on('sendingBackRoomSizeChangeMidGame', settingGameLobbyState);
+
+/// player cards and chips event listeners ///
+
+divForCardImgP1.addEventListener('touchmove', function(e) {
+    var touchLocation = e.targetTouches[0];
+
+    divForCardImgP1.style.left = touchLocation.pageX - 40 + "px";
+    divForCardImgP1.style.top = touchLocation.pageY - 60 + "px";
+
+})
+
+divForCardImgP1.addEventListener('touchend', function(e) {
+    var x = parseInt(divForCardImgP1.style.left);
+    var y = parseInt(divForCardImgP1.style.top);
+
+    // socket.emit('sendingUserEndPointsForTests', x, y);
+
+
+    if (y >= 271 && y <= 371 && x >= 118 && x <= 318) {
+        // player drags cards to middle indicating fold
+        playerOne.throwsCardsInForFold();
+    } else if (y >= 540 && y <= 585 && x >= 130 && x <= 211) {
+        // player drags card to border to indicate fold cancel
+        playerOne.cancelsFold();
+    }
+
+})
+
+let p1ChipsCaseQuery = document.querySelectorAll(".p1ChipCase");
+
+p1ChipsCaseQuery.forEach((c) => {
+    c.addEventListener('touchmove', function(e) {
+        var touchLocation = e.targetTouches[0];
+
+        c.style.left = touchLocation.pageX - 40 + "px";
+        c.style.top = touchLocation.pageY - 60 + "px";
+    })
+})
+
+p1ChipsCaseQuery.forEach((c) => {
+    c.addEventListener('touchend', function(e) {
+        var x = parseInt(c.style.left);
+        var y = parseInt(c.style.top);
+
+        let nValue = Number(p1BetAmount.value);
+
+        if (y >= 449 && y <= 482 && x >= 140 && x <= 217) {
+            nValue += Number(c.innerText);
+            p1BetAmount.value = nValue;
+        } 
+
+        c.style.top = '615px';
+
+        if (c.id === 'lowestChipP1') {
+            c.style.left = '100px';
+        } 
+        if (c.id === 'secondLowestChipP1') {
+            c.style.left = '155px';
+        } 
+        if (c.id == 'secondHighestChipP1') {
+            c.style.left = '210px';
+        } 
+        if (c.id == 'highestChipP1') {
+            c.style.left = '265px';
+        }
+    })
+})
+
+
+// divForPlacementCardImgP1.addEventListener('touchmove', function(e) {
+//     var touchLocation = e.targetTouches[0];
+
+//     divForPlacementCardImgP1.style.left = touchLocation.pageX - 40 + "px";
+//     divForPlacementCardImgP1.style.top = touchLocation.pageY - 60 + "px";
+
+// })
+
+// divForPlacementCardImgP1.addEventListener('touchend', function(e) {
+//     var x = parseInt(divForPlacementCardImgP1.style.left);
+//     var y = parseInt(divForPlacementCardImgP1.style.top);
+
+//     socket.emit('sendingUserEndPointsForTests', x, y);
+
+// })
+
+/// Reconnection ONs ///
+
+socket.on('previousUserReconnectedWhileInPreGameLobby', signalUserReconnectionIndicator); 
+
+socket.on('sendingBackUserOptToLoadClean', returningUserToHomeOnCleanLoad);
+
+socket.on('equalizingGameForIdleUser', receivingEqualizationForGameStateIdlePlayer);
+
+socket.on('grabbingGameStateForEqualizationIdlePlayer', grabbingGSForEqualizationIdlePlayer);
+
+socket.on('equalizingGameForIdlePlayer', equalizingGameForIdlePlayer);
+
+// socket.on('userHasReconnectedFromIdle', displayUserInfoAfterReconnect);
+
+// socket.on('sendingForUserIdleInfo', grabbingUserIdleInfo);
+
+
+
+
+</script>
+
+
+
+
+
+</html>
